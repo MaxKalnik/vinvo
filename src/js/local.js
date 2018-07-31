@@ -218,21 +218,45 @@ if($('.testimonials__slides-list').length) {
     checkUI();
   };
 
-  body.on('click', '.testimonials__list-controls--left', function() {
-    prev();
+  $('.testimonials__list-controls--left').swipe({
+    tap: function(event, target) {
+      prev();
+    }
   });
-  body.on('click', '.testimonials__list-controls--right', function() {
-    next();
+  $('.testimonials__list-controls--right').swipe({
+    tap: function(event, target) {
+      next();
+    }
   });
-  body.on('click', '.testimonials__pointers-item', function(evt) {
-    var id = $(this).data('id');
+  $('.testimonials__pointers-item').swipe({
+    tap: function(event, target) {
+      var id = $(this).data('id');
     document.querySelector(".testimonials__slides-list").style.transform = "translateX(-" + ($slideWidth * (+id)) + "px)";
     index = id;
     checkBullets();
     checkUI();
+    }
   });
 
   $(window).resize(throttle(initVars, 500, {leading: false}))
+}
+
+var currentForm;
+
+function send(data, onSuccess, onError) {
+  var xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
+
+  xhr.addEventListener('load', function () {
+    if (xhr.status === 200) {
+      currentForm = data;
+    } else {
+      console.log('Ошибка ' + xhr.status);
+    }
+  });
+
+  xhr.open('POST', URL.post);
+  xhr.send(data);
 }
 
 // make all popups by one class, maybe using coffeescript
@@ -241,11 +265,16 @@ if($('.testimonials__slides-list').length) {
 function dialogCommonHandler($activateEl) {
   var popupId = $activateEl.data('id');
   var $popup = $('#' + popupId);
-  var $popupClose = $popup.children('.popup__close-btn');
-  var $popupBtn = $popup.children('.popup__submit-btn');
+  var $popupClose = $popup.find('.popup__close-btn');
+  var $popupBtn = $popup.find('.popup__submit-btn');
+  var $form = $activateEl.parents('form');
 
   $($activateEl).click(function() {
+    $('.popup').hide();
     $popup.show();
+    if($form.length > 0) {
+      send(new FormData($form));
+    }
   });
 
   $($activateEl).keydown(function(e) {
@@ -254,17 +283,23 @@ function dialogCommonHandler($activateEl) {
     }
   });
 
-  $popupClose.click(function(){
-    $popup.hide();
+  $($popupClose).swipe({
+    tap: function(event, target) {
+      $popup.hide();
+    }
   });
+
   $(document).keydown(function(e){
     if(e.which === ESC_KEYCODE) {
       $popup.hide();
     }
   });
 
-  $popupBtn.click(function(){
-    $popup.hide();
+  $($popupBtn).swipe({
+    tap: function(event, target) {
+      event.preventDefault();
+      $popup.hide();
+    }
   });
   $popupBtn.keydown(function(e){
     if(e.which === ENTER_KEYCODE) {
@@ -274,10 +309,50 @@ function dialogCommonHandler($activateEl) {
 }
 
 dialogCommonHandler($('.header__callback-form-btn'));
+dialogCommonHandler($('.header__callback-btn'));
+dialogCommonHandler($('.best-price__button'));
+dialogCommonHandler($('.budget-price__button'));
+dialogCommonHandler($('.popup__form-btn'));
+dialogCommonHandler($('.main-steps__button--defined'));
+dialogCommonHandler($('.main-steps__button--undefined'));
+dialogCommonHandler($('.contacts__callback-button'));
+dialogCommonHandler($('.info__proposals-form-btn'));
 
+$('.footer__tel-toggle').swipe({
+  tap: function(event, target) {
+    $(this).parents('.footer__tel-numbers').toggleClass('footer__tel-numbers--active');
+  }
+});
 
+$('.header__tel-toggle').swipe({
+  tap: function(event, target) {
+    $(this).parents('.header__tel-numbers').toggleClass('header__tel-numbers--active');
+  }
+});
 
+$(document).mouseup(function(e) {
+    var container = $('.header__tel-numbers');
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      container.removeClass('header__tel-numbers--active');
+    }
+});
+$(document).mouseup(function(e) {
+    var container = $('.footer__tel-numbers');
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      container.removeClass('footer__tel-numbers--active');
+    }
+});
 
+$('.popup__form-switcher-label--defined').swipe({
+  tap: function(event, target) {
+    $(this).parents('.popup__wrapper').removeClass('popup__wrapper--full');
+  }
+});
 
+$('.popup__form-switcher-label--undefined').swipe({
+  tap: function(event, target) {
+    $(this).parents('.popup__wrapper').addClass('popup__wrapper--full');
+  }
+});
 
 
