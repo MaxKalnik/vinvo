@@ -1307,6 +1307,9 @@ button {
     display: none;
   }
 }
+.tours__item-button-txt--mob {
+  display: none;
+}
 @media only screen and (max-width: 1439px) {
   .tours__item-button-txt--mob {
     display: inline;
