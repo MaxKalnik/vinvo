@@ -1,0 +1,64 @@
+.button
+  display inline-block
+  padding 22px 48px
+  font-weight: 700
+  line-height: normal
+  font-size: 16px
+  color #ffffff
+  box-sizing border-box
+  background: linear-gradient(73.59deg, #632774 7.28%, #CB4272 92.72%, #CB4272 92.72%)
+  border-radius: 6px
+
+.button-white
+  display inline-block
+  padding 22px 32px
+  border 1px solid #fff
+  box-sizing border-box
+  font-size 16px
+  font-weight 700
+  line-height normal
+  color #ffffff
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1)
+  border-radius 4px
+  transition .25s
+
+  &:hover
+    background #fff
+    color #AE3A73
+
+  +respond-to($xsmall)
+    width 100%
+
+.button-blue
+  display inline-block
+  padding 16px 32px
+  border 1px solid #198CFF
+  box-sizing border-box
+  font-size 16px
+  font-weight 700
+  line-height normal
+  color #198CFF
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1)
+  border-radius 4px
+
+.input
+  background #fff
+  border none
+  outline none
+  padding 18px 24px
+  border-radius: 4px
+  font-weight: 700
+  line-height: normal
+  font-size: 16px
+  color: #303F4D
+  font-weight 300
+  border 1px solid transparent
+  &::placeholder
+    color: #7B7B7B
+
+  &:focus
+    border 1px solid #a8d5ff
+
+.last-margin
+  &:last-child
+    margin-bottom 0

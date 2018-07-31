@@ -1,0 +1,93 @@
+body
+  font-family: 'Fira Sans', sans-serif
+  -webkit-text-size-adjust: 100%
+  color #19082B
+  $ultraThin()
+
+ul, li
+  list-style: none
+
+fieldset
+  padding: 0
+  margin: 0
+  outline: none
+  border: none
+
+a
+  cursor pointer
+
+p
+  width 100%
+  box-sizing border-box
+
+input
+  outline none
+  box-shadow none
+  margin 0
+
+button
+  outline none
+  border none
+  background none
+  cursor pointer
+  padding 0
+  margin 0
+  -webkit-appearance: none
+  cursor pointer
+
+.container
+  width: 1140px
+  margin: 0 auto
+  box-sizing: border-box
+
+  +respond-from($large)
+    width: 1360px
+
+  +respond-to($medium)
+    width: 936px
+
+  +respond-to($small)
+    width: 720px
+
+  +respond-to($xsmall)
+    width: calc(100% - 32px)
+
+.flex-row
+  display flex
+  flex-direction row
+  justify-content space-between
+  align-items center
+
+.flex-row-multiple
+  display flex
+  flex-direction row
+  justify-content space-between
+  flex-wrap wrap
+
+.flex-card
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+
+.main-text
+  font-size 16px
+  line-height 28px
+  font-weight 400
+  color #0a0c0d
+
+.small-text
+  font-size 14px
+  line-height 24px
+  font-weight 400
+  color #0a0c0d
+
+.section-padding
+  padding 60px 0
+
+.section-margin
+  margin 44px 0
+
+.ie-full
+  width 100%
+  box-sizing border-box

@@ -1,0 +1,14 @@
+include ./data/_tours-data
+include ./mixins
+
+.tours
+  .tours__wrapper
+    .tours__title
+      | Наши туристы в восторге от отдыха в этих странах!
+
+    p.tours__upper-text
+      | Мы предлагаем клиентам только самые интересные туры: подбираем их по заданным параметрам из огромной базы и находим лучшую цену!
+
+    .tours__items
+      each country in countries
+        +tours(country)

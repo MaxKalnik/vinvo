@@ -1,0 +1,50 @@
+$xxsmall = 321px
+$xsmall-iphone = 568px
+$xsmall = 768px
+$small = 1024px
+$medium = 1440px
+$large = 1920px
+
+respond-to($media)
+  @media only screen and (max-width: $media - 1px)
+    {block}
+
+respond-from($media)
+  @media only screen and (min-width: $media)
+    {block}
+
+respond-range($media-in, $media-ul)
+  @media only screen and (min-width: $media-in) and (max-width: $media-ul - 1px)
+    {block}
+
+respond-to-retina
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2)
+    {block}
+
+respond-to-retina-one
+  @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+    {block}
+
+margin-responsive($val1, $val2, $val3, $val4)
+  margin-bottom $val1+px
+
+  +respond-to($medium)
+    margin-bottom $val2+px
+
+  +respond-to($small)
+    margin-bottom $val3+px
+
+  +respond-to($xsmall)
+    margin-bottom $val4+px
+
+left-icon($val1, $val2, $val3, $val4)
+  padding-left $val1
+
+  +respond-to($medium)
+    padding-left $val2
+
+  +respond-to($small)
+    padding-left $val3
+
+  +respond-to($xsmall)
+    padding-left $val4

@@ -1,0 +1,97 @@
+.popup.popup--callback#callback
+  .popup__wrapper
+    button.popup__close-btn(type="button", tabindex="0")
+
+    .popup__title
+      | Обратный звонок
+
+    .popup__text
+      | Мы на связи 24 часа, без выходных и праздников. Готовы ответить на ваши вопросы, обеспечить консультацию и забронировать тур в ближайшее время.
+
+    form.popup__form(action="", method="POST")
+      input.popup__form-input(type="text", placeholder="Как вас зовут?", minlength=3, required)
+      input.popup__form-input(type="tel", placeholder="Контактный телефон", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}", required)
+      select.popup__form-select(placeholder="Удобное время звонка")
+        option(value=undefined)
+          | Удобное время звонка
+
+        option(value="1")
+          | В ближайшее время
+
+        option(value="2")
+          | с 10:00 до 14:00
+
+        option(value="3")
+          | с 14:00 до 19:00
+
+        option(value="4")
+          | с 19:00 до 22:00
+
+      button.popup__form-btn(type="button", data-id="thank-you")
+        | Перезвоните мне
+
+
+.popup.popup--order-prime#booking
+  .popup__wrapper
+    button.popup__close-btn(type="button", tabindex="0")
+
+    .popup__title
+      | Забронировать тур
+
+    .popup__text
+      | Наши менеджеры на связи 24/7 и всегда помогут вам быстро и качественно забронировать тур.
+
+    form.popup__form(action="", method="POST")
+      .popup__form-switcher
+        .popup__form-switcher-item
+          input.popup__form-switcher-radio(type="radio", id="defined", name="type" checked)
+          label.popup__form-switcher-label.popup__form-switcher-label--defined(for="defined")
+            | Подберите мне тур
+
+        .popup__form-switcher-item
+          input.popup__form-switcher-radio(type="radio", id="undefined", name="type")
+          label.popup__form-switcher-label.popup__form-switcher-label--undefined(for="undefined")
+            | Я точно знаю, куда хочу
+
+
+      .popup__form-slides
+        .popup__form-slides-list
+          .popup__form-wrapper
+            input.popup__form-input(type="text", placeholder="Как вас зовут?" minlength=3, required)
+            input.popup__form-input(type="email", placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
+            input.popup__form-input(type="tel", placeholder="Контактный телефон", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}", required)
+            input.popup__form-input(type="text", placeholder="Желаемое направление" minlength=3, required)
+
+          .popup__form-wrapper.popup__form-wrapper--full
+            input.popup__form-input.popup__form-input--half(type="text", placeholder="Как вас зовут?" minlength=3, required)
+            input.popup__form-input.popup__form-input--half(type="email", placeholder="Ваш Email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
+            input.popup__form-input.popup__form-input--half(type="tel", placeholder="Контактный телефон", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}", required)
+            input.popup__form-input.popup__form-input--half(type="text", placeholder="Желаемое направление", minlength=3, required)
+
+            input.popup__form-input.popup__form-input--half(type="text", placeholder="Отель", minlength=3, required)
+            input.popup__form-input.popup__form-input--half(type="date", placeholder="Даты вылета", required)
+            input.popup__form-input.popup__form-input--half(type="number", placeholder="Количество ночей", min=0, required)
+            input.popup__form-input.popup__form-input--half(type="number", placeholder="Количество туристов", min=0, required)
+
+      textarea.popup__form-input.popup__form-input--textarea(placeholder="Комментарий")
+
+      button.popup__form-btn(type="button", data-id="thank-you")
+        | Отправить запрос на подбор тура
+
+.popup.popup--thanks#thank-you
+  .popup__wrapper
+    button.popup__close-btn(type="button", tabindex="0")
+
+    picture
+      source(media='(max-width: 767px)', srcset="images/photo/thanks.png, images/photo/thanks@2x.png 2x")
+      img.popup__img(src="images/photo/thanks.png", srcset="images/photo/thanks@2x.png 2x", alt="Girl")
+
+    .popup__title.popup__title--with-icon
+      | Спасибо за обращение!
+
+    .popup__text
+      | Мы получили ваш запрос и уже начали готовить подборку туров для вас.
+
+
+
+

@@ -1,0 +1,225 @@
+$sliderViewport = 980px
+$sliderViewportMedium = 784px
+$sliderViewportSmall = 568px
+$sliderViewportXsmall = 400px
+$sliderViewportXXsmall = 288px
+
+.testimonials
+  background #fff
+  padding 96px 0
+
+  +respond-to($medium)
+    padding 64px 0
+
+  +respond-to($xsmall)
+    padding 32px 0
+
+.testimonials__wrapper
+  @extend .container
+
+.testimonials__list-wrapper
+  position: relative
+  width: $sliderViewport
+  margin: 0 auto
+  margin-top 48px
+
+  +respond-to($medium)
+    width: $sliderViewportMedium
+
+  +respond-to($small)
+    width: $sliderViewportSmall
+
+  +respond-to($xsmall)
+    margin-top 32px
+    width: $sliderViewportXsmall
+
+  +respond-to($xsmall-iphone)
+    width: $sliderViewportXXsmall
+
+.testimonials__slides-list-wrapper
+  position: relative
+  width: $sliderViewport
+  overflow: hidden
+  +respond-to($medium)
+    width: $sliderViewportMedium
+
+  +respond-to($small)
+    width: $sliderViewportSmall
+
+  +respond-to($xsmall)
+    width: $sliderViewportXsmall
+    margin-left: auto
+    margin-right: auto
+
+  +respond-to($xsmall-iphone)
+    width: $sliderViewportXXsmall
+
+.testimonials__slides-list
+  width: $sliderViewport * 3
+  position: relative
+  display: flex
+  flex-direction: row
+  align-items: flex-start
+  transition: .25s
+  overflow: hidden
+  +respond-to($medium)
+    width: $sliderViewportMedium * 3
+
+  +respond-to($small)
+    width: $sliderViewportSmall * 3
+
+  +respond-to($xsmall)
+    width: $sliderViewportXsmall * 3
+    margin-left: auto
+    margin-right: auto
+
+  +respond-to($xsmall-iphone)
+    width: $sliderViewportXXsmall * 3
+
+.testimonials__list-item
+  width: $sliderViewport
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  box-sizing: border-box
+
+  +respond-to($medium)
+    width: $sliderViewportMedium
+
+
+  +respond-to($small)
+    width: $sliderViewportSmall
+
+
+  +respond-to($xsmall)
+    width: $sliderViewportXsmall
+    margin-left: auto
+    margin-right: auto
+
+  +respond-to($xsmall-iphone)
+    width: $sliderViewportXXsmall
+
+.testimonials__list-item-author
+  font-size: 16px
+  line-height: 16px
+  font-weight: 400
+  color: #ffffff
+  text-align: center
+  margin-bottom: 48px
+
+.testimonials__list-author
+  @extend .flex-card
+
+.testimonials__list-author-img-wrapper
+  position relative
+  &:after
+    content ''
+    position absolute
+    width 46px
+    height 46px
+    background url(images/svg/quotes.svg) center no-repeat
+    right 0
+    bottom 0
+
+.testimonials__list-author-img
+  width 131px
+  height 131px
+  border-radius 50%
+  margin-bottom 15px
+
+.testimonials__list-author-name
+  width 100%
+  box-sizing border-box
+  text-align center
+  font-size 20px
+  line-height 28px
+  font-weight 400
+  color #303F4D
+  margin-bottom 5px
+
+.testimonials__list-author-text
+  width 100%
+  box-sizing border-box
+  text-align center
+  font-size 16px
+  line-height 28px
+  font-weight 400
+  color #859DB7
+  margin-bottom 24px
+
+  +respond-to($xsmall)
+    margin-bottom 16px
+
+.testimonials__list-text
+  width 100%
+  box-sizing border-box
+  text-align center
+  font-size 16px
+  line-height 28px
+  font-weight 400
+  color #303F4D
+
+  +respond-to($xsmall)
+    width 100%
+    margin-bottom 16px
+
+.testimonials__pointers
+  display: flex
+  width: 40px
+  box-sizing: border-box
+  margin: 0 auto
+
+.testimonials__list-controls
+  position: absolute
+  background: none
+  border: none
+  outline: none
+  cursor: pointer
+
+  +respond-to($xsmall)
+    display: none
+
+.testimonials__list-controls--inactive
+  opacity: 0.4
+
+.testimonials__list-controls--left
+  top: 50%
+  left: -81px
+
+  +respond-to($small)
+    left: -41px
+
+.testimonials__list-controls--right
+  top: 50%
+  right: -81px
+  transform: rotate(180deg)
+
+  +respond-to($small)
+    right -41px
+
+.testimonials__pointers
+  display none
+  width: 50px
+  box-sizing: border-box
+  margin: 0 auto
+
+  +respond-to($xsmall)
+    display flex
+
+.testimonials__pointers-item
+  width: 12px
+  height: 12px
+  border: 1px solid #859DB7
+  margin-right: 8px
+  background: #859DB7
+  box-sizing: border-box
+  border-radius: 50%
+  cursor pointer
+  opacity .2
+  &:last-child
+    margin-right: 0
+
+.testimonials__pointers-item--active
+  opacity 1
+

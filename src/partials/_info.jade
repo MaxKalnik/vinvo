@@ -1,0 +1,58 @@
+include ./svg-mixins
+
+.info
+  .info__wrapper
+    .info__proposals-wrapper
+      .info__proposals
+        h3.info__proposals-title
+          +horn
+          | Хотите всегда быть в курсе самых выгодных предложений?
+
+        p.info__proposals-text
+          | Мы раз в неделю будем оповещать вас о лучших предложениях на рынке. Покупайте дешевле!
+
+        form.info__proposals-form(action="", method="POST")
+          input.info__proposals-form-input(type="text", placeholder="Как вас зовут?", minlength=3, required)
+          input.info__proposals-form-input(type="email", placeholder="Ваш Email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
+          button.info__proposals-form-btn(type="button", data-id="thank-you")
+            | Сообщайте нам о скидках
+
+        p.info__proposals-under-text
+          | Только полезные оповещения. Никакого спама и воды.
+
+    .info__numbers
+      h3.info__numbers-title
+        | О компании VinvoTravel в цифрах:
+
+      .info__numbers-items
+        .info__numbers-item
+          +tour_base
+          p.info__numbers-number
+            | 550 000 00
+
+          p.info__numbers-text
+            | туров в базе
+
+        .info__numbers-item
+          +sat_clients
+          p.info__numbers-number
+            | 11 000
+
+          p.info__numbers-text
+            | довольных клиентов
+
+        .info__numbers-item
+          +clients_back
+          p.info__numbers-number
+            | 98%
+
+          p.info__numbers-text
+            | людей возвращаются к нам снова
+
+        .info__numbers-item
+          +countries_vis
+          p.info__numbers-number
+            | 78
+
+          p.info__numbers-text
+            | стран, посещенных нашими туристами

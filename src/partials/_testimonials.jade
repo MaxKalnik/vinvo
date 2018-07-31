@@ -1,0 +1,63 @@
+include ./svg-mixins
+
+.testimonials
+  .testimonials__wrapper
+    h2.section__title
+      | Что говорят наши клиенты?
+
+    .testimonials__list-wrapper
+      button.testimonials__list-controls.testimonials__list-controls--left.testimonials__list-controls--inactive(type="button")
+        +controls
+
+      button.testimonials__list-controls.testimonials__list-controls--right(type="button")
+        +controls
+
+      .testimonials__slides-list-wrapper
+        ul.testimonials__slides-list
+          li.testimonials__list-item
+            .testimonials__list-author
+              .testimonials__list-author-img-wrapper
+                img.testimonials__list-author-img(src="images/photo/client.png", srcset="images/photo/client@2x.png 2x")
+
+              p.testimonials__list-author-name
+                | Роман
+
+              p.testimonials__list-author-text
+                | Отдыхали в Айя-Напа, Кипр
+
+            p.testimonials__list-text
+              | Ребята из Винво, вам большой зачёт! За то, что создали такой удобный и крутой сервис, а также за то, что не забывали о нас в течение всей поездки. Чувствуется, что вам нравится ваша работа, и вы ответственно к ней.
+
+          li.testimonials__list-item
+            .testimonials__list-author
+              .testimonials__list-author-img-wrapper
+                img.testimonials__list-author-img(src="images/photo/client.png", srcset="images/photo/client@2x.png 2x")
+
+              p.testimonials__list-author-name
+                | Роман
+
+              p.testimonials__list-author-text
+                | Отдыхали в Айя-Напа, Кипр
+
+            p.testimonials__list-text
+              | Ребята из Винво, вам большой зачёт! За то, что создали такой удобный и крутой сервис, а также за то, что не забывали о нас в течение всей поездки. Чувствуется, что вам нравится ваша работа, и вы ответственно к ней.
+
+          li.testimonials__list-item
+            .testimonials__list-author
+              .testimonials__list-author-img-wrapper
+                img.testimonials__list-author-img(src="images/photo/client.png", srcset="images/photo/client@2x.png 2x")
+
+              p.testimonials__list-author-name
+                | Роман
+
+              p.testimonials__list-author-text
+                | Отдыхали в Айя-Напа, Кипр
+
+            p.testimonials__list-text
+              | Ребята из Винво, вам большой зачёт! За то, что создали такой удобный и крутой сервис, а также за то, что не забывали о нас в течение всей поездки. Чувствуется, что вам нравится ваша работа, и вы ответственно к ней.
+
+
+    .testimonials__pointers
+      .testimonials__pointers-item(data-id='0')
+      .testimonials__pointers-item(data-id='1')
+      .testimonials__pointers-item(data-id='2')

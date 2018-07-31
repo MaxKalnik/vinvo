@@ -1,0 +1,142 @@
+backgroundCountry(countries...)
+  for country in countries
+    .tours__item--{country}
+      background: url('images/photo/' + country + '.png') center no-repeat
+      background-size cover
+      @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+        background: url('images/photo/'+ country + '@2x.png') center no-repeat
+        background-size cover
+
+      +respond-to($small)
+        background: url('images/photo/' + country + '_768.png') center no-repeat
+        background-size cover
+        @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+          background: url('images/photo/'+ country + '_768@2x.png') center no-repeat
+          background-size cover
+
+      +respond-to($xsmall)
+        background: url('images/photo/' + country + '.png') center no-repeat
+        background-size cover
+        @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+          background: url('images/photo/'+ country + '@2x.png') center no-repeat
+          background-size cover
+
+iconCountries(countries...)
+  for country in countries
+    .tours__item--{country}
+      .tours__item-country
+        padding-left 32px
+        position relative
+        &:before
+          content ''
+          width 24px
+          height 24px
+          position absolute
+          left 0
+          top 0
+          background url('images/icons/' + country + '.png') center no-repeat
+          background-size cover
+
+.tours
+  background #fff
+
+.tours__wrapper
+  @extend .container
+  padding 64px 0 80px 0
+
+  +respond-to($medium)
+    padding 64px 0 40px 0
+
+  +respond-to($small)
+    padding 32px 0
+
+.tours__title
+  @extend .section__title
+  margin-bottom 24px
+
+.tours__upper-text
+  font-size 20px
+  line-height 1.3
+  font-weight 300
+  color #505C69
+  margin-bottom 48px
+  text-align center
+
+.tours__items
+  @extend .flex-row-multiple
+
+  +respond-to($xsmall)
+    flex-direction column
+    align-items center
+
+.tours__item
+  width 352px
+  height 354px
+  box-sizing border-box
+  display flex
+  flex-direction column
+  padding 24px
+  margin-bottom 32px
+  border-radius 6px
+
+  +respond-to($medium)
+    width 32%
+
+  +respond-to($small)
+    width 224px
+    height 232px
+    padding 12px
+    margin-bottom 24px
+
+  +respond-to($xsmall)
+    width 100%
+    max-width 352px
+    min-height 232px
+    height auto
+    margin-bottom 16px
+    &:last-child
+      margin-bottom 0
+
+backgroundCountry('bulgaria', 'egypt', 'turkey', 'greece', 'uae', 'goa', 'cyprus', 'sri_lanka', 'albania')
+
+iconCountries('bulgaria', 'egypt', 'turkey', 'greece', 'uae', 'goa', 'cyprus', 'sri_lanka', 'albania')
+
+.tours__item-country
+  font-size 24px
+  line-height 1
+  color #fff
+  margin-top auto
+  margin-bottom 8px
+
+  +respond-to($small)
+    margin-bottom 4px
+
+.tours__item-price
+  font-size 18px
+  line-height 1
+  font-weight 400
+  color #fff
+  margin-bottom 16px
+
+  +respond-to($small)
+    margin-bottom 8px
+
+  .semibold
+    font-size 22px
+    line-height 1
+
+.tours__item-button
+  @extend .button-white
+  padding 14px 16px
+  width 100%
+
+  +respond-to($small)
+    padding 10px 16px
+
+.tours__item-button-txt
+  +respond-to($medium)
+    display none
+
+.tours__item-button-txt--mob
+  +respond-to($medium)
+    display inline

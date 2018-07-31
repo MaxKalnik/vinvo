@@ -1,0 +1,71 @@
+
+<div id="callback" class="popup popup--callback">
+  <div class="popup__wrapper">
+    <button type="button" tabindex="0" class="popup__close-btn"></button>
+    <div class="popup__title">Обратный звонок</div>
+    <div class="popup__text">Мы на связи 24 часа, без выходных и праздников. Готовы ответить на ваши вопросы, обеспечить консультацию и забронировать тур в ближайшее время.</div>
+    <form action="" method="POST" class="popup__form">
+      <input type="text" placeholder="Как вас зовут?" minlength="3" required="required" class="popup__form-input"/>
+      <input type="tel" placeholder="Контактный телефон" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required="required" class="popup__form-input"/>
+      <select placeholder="Удобное время звонка" class="popup__form-select">
+        <option>Удобное время звонка</option>
+        <option value="1">В ближайшее время</option>
+        <option value="2">с 10:00 до 14:00</option>
+        <option value="3">с 14:00 до 19:00</option>
+        <option value="4">с 19:00 до 22:00</option>
+      </select>
+      <button type="button" data-id="thank-you" class="popup__form-btn">Перезвоните мне</button>
+    </form>
+  </div>
+</div>
+<div id="booking" class="popup popup--order-prime">
+  <div class="popup__wrapper">
+    <button type="button" tabindex="0" class="popup__close-btn"></button>
+    <div class="popup__title">Забронировать тур</div>
+    <div class="popup__text">Наши менеджеры на связи 24/7 и всегда помогут вам быстро и качественно забронировать тур.</div>
+    <form action="" method="POST" class="popup__form">
+      <div class="popup__form-switcher">
+        <div class="popup__form-switcher-item">
+          <input type="radio" id="defined" name="type" checked="checked" class="popup__form-switcher-radio"/>
+          <label for="defined" class="popup__form-switcher-label popup__form-switcher-label--defined">Подберите мне тур</label>
+        </div>
+        <div class="popup__form-switcher-item">
+          <input type="radio" id="undefined" name="type" class="popup__form-switcher-radio"/>
+          <label for="undefined" class="popup__form-switcher-label popup__form-switcher-label--undefined">Я точно знаю, куда хочу</label>
+        </div>
+      </div>
+      <div class="popup__form-slides">
+        <div class="popup__form-slides-list">
+          <div class="popup__form-wrapper">
+            <input type="text" placeholder="Как вас зовут?" minlength="3" required="required" class="popup__form-input"/>
+            <input type="email" placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required="required" class="popup__form-input"/>
+            <input type="tel" placeholder="Контактный телефон" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required="required" class="popup__form-input"/>
+            <input type="text" placeholder="Желаемое направление" minlength="3" required="required" class="popup__form-input"/>
+          </div>
+          <div class="popup__form-wrapper popup__form-wrapper--full">
+            <input type="text" placeholder="Как вас зовут?" minlength="3" required="required" class="popup__form-input popup__form-input--half"/>
+            <input type="email" placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required="required" class="popup__form-input popup__form-input--half"/>
+            <input type="tel" placeholder="Контактный телефон" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required="required" class="popup__form-input popup__form-input--half"/>
+            <input type="text" placeholder="Желаемое направление" minlength="3" required="required" class="popup__form-input popup__form-input--half"/>
+            <input type="text" placeholder="Отель" minlength="3" required="required" class="popup__form-input popup__form-input--half"/>
+            <input type="date" placeholder="Даты вылета" required="required" class="popup__form-input popup__form-input--half"/>
+            <input type="number" placeholder="Количество ночей" min="0" required="required" class="popup__form-input popup__form-input--half"/>
+            <input type="number" placeholder="Количество туристов" min="0" required="required" class="popup__form-input popup__form-input--half"/>
+          </div>
+        </div>
+      </div>
+      <textarea placeholder="Комментарий" class="popup__form-input popup__form-input--textarea"></textarea>
+      <button type="button" data-id="thank-you" class="popup__form-btn">Отправить запрос на подбор тура</button>
+    </form>
+  </div>
+</div>
+<div id="thank-you" class="popup popup--thanks">
+  <div class="popup__wrapper">
+    <button type="button" tabindex="0" class="popup__close-btn"></button>
+    <picture>
+      <source media="(max-width: 767px)" srcset="images/photo/thanks.png, images/photo/thanks@2x.png 2x"/><img src="images/photo/thanks.png" srcset="images/photo/thanks@2x.png 2x" alt="Girl" class="popup__img"/>
+    </picture>
+    <div class="popup__title popup__title--with-icon">Спасибо за обращение!</div>
+    <div class="popup__text">Мы получили ваш запрос и уже начали готовить подборку туров для вас.</div>
+  </div>
+</div>

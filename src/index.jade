@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,600,700', rel='stylesheet')
+    link(inline='', rel='stylesheet', type='text/css', href='index.min.css')
+    title Vinvo Travel
+
+  body
+    include ./partials/_header.jade
+    include ./partials/_tours.jade
+    include ./partials/_best-price.jade
+    include ./partials/_info.jade
+    include ./partials/_conviniences.jade
+    include ./partials/_main-steps.jade
+    include ./partials/_testimonials.jade
+    include ./partials/_budget.jade
+    include ./partials/_contacts.jade
+    include ./partials/_footer.jade
+    include ./partials/_popup.jade
+
+    //- script(type='text/javascript', src='js/script.min.js')
+    script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAv2l5KdFwcp5pqwd5SzuoJNwjcGCnkI88&callback=initMap')
+    script(type='text/javascript', src='js/jquery-1.11.1.min.js')
+    script(type='text/javascript', src='js/jquery.touchSwipe.min.js')
+    script(type='text/javascript', src='js/throttle.js')
+    script(type='text/javascript', src='js/local.js')

@@ -1,0 +1,63 @@
+.conviniences
+  background: linear-gradient(161.92deg, #198CFF 17.89%, #68B3FF 79.04%)
+  padding 96px 0
+
+  +respond-to($small)
+    padding 64px 0
+
+  +respond-to($xsmall)
+    padding 32px 0
+
+.conviniences__wrapper
+  @extend .container
+
+.conviniences__items
+  @extend .flex-row-multiple
+  margin-top 40px
+
+  +respond-to($small)
+    margin-top 32px
+    flex-direction column
+
+.conviniences__item
+  @extend .flex-card
+  width 352px
+  box-sizing border-box
+
+  +respond-to($medium)
+    width 262px
+
+  +respond-to($small)
+    width 100%
+    margin-bottom 32px
+    &:last-child
+      margin-bottom 0
+
+.conviniences__item-img
+  margin-bottom 24px
+
+  +respond-to($xsmall)
+    margin-bottom 16px
+
+.conviniences__item-title
+  @extend .ie-full
+  color #fff
+  font-size 20px
+  line-height 32px
+  font-weight 500
+  text-align center
+  margin-bottom 24px
+
+  +respond-to($small)
+    margin-bottom 18px
+
+  +respond-to($xsmall)
+    margin-bottom 8px
+
+.conviniences__item-text
+  @extend .ie-full
+  color #fff
+  font-size 14px
+  line-height 24px
+  font-weight 400
+  text-align center

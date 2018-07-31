@@ -1,0 +1,50 @@
+include ./svg-mixins
+
+.header
+  .header__wrapper
+    .header__top
+      a.header__main-logo(href="https://vinvotravel.com/")
+        img.header__main-logo-img(src="images/svg/logo.svg")
+
+      .header__user-block-wrapper
+        button.header__user-block-toggle(type="button")
+        .header__user-block
+          .header__tel-numbers
+
+            a.header__tel-btn(href="tel:+380443320258")
+              | +38 (044) 332-02-58
+
+            button.header__tel-toggle(type="button")
+
+            .header__tel-other
+              a.header__tel-btn(href="tel:+380443320258")
+                | +38 (044) 332-02-58
+
+              a.header__tel-btn(href="tel:+380443320258")
+                | +38 (044) 332-02-58
+
+              a.header__tel-btn(href="tel:+380443320258")
+                | +38 (044) 332-02-58
+
+          button.header__callback-btn(type="button", data-id="callback")
+            | Перезвоните мне
+
+    .header__main
+      h1.header__title
+        | Кажется, Вам давно пора в отпуск
+
+      p.header__main-text
+        | Хватит работать, вы заслужили отдых — оставьте заявку прямо сейчас  и получите тур по горячей цене!
+
+      form.header__callback-form(action="", method="POST")
+        input.header__callback-form-tel(type="tel", placeholder="+380(__)___-__-__", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}" required)
+        button.header__callback-form-btn(type="button", data-id="thank-you")
+          | Подобрать тур
+
+    .header__partners
+      img.header__partners-img(src="images/logo/join_up.png", srcset="images/logo/join_up@2x.png 2x")
+      img.header__partners-img(src="images/logo/anex_tour.png", srcset="images/logo/anex_tour@2x.png 2x")
+      img.header__partners-img(src="images/logo/pegas.png", srcset="images/logo/pegas@2x.png 2x")
+      img.header__partners-img(src="images/logo/coral_travel.png", srcset="images/logo/coral_travel@2x.png 2x")
+      img.header__partners-img(src="images/logo/tez_tour.png", srcset="images/logo/tez_tour@2x.png 2x")
+      img.header__partners-img(src="images/logo/mouzenidis.png", srcset="images/logo/mouzenidis@2x.png 2x")

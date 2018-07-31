@@ -1,0 +1,58 @@
+include ./svg-mixins
+
+.main-steps
+  .main-steps__wrapper
+    h2.section__title
+      | Всего несколько шагов и путевка у вас в кармане!
+
+    .main-steps__items
+      .main-steps__item
+        p.main-steps__item-header
+          +step_icon_1
+          | Шаг 1
+
+        h3.main-steps__item-title
+          | Оставьте заявку на сайте
+
+        p.main-steps__item-text
+          | Просто заполните форму и укажите, как  с вами лучше связаться.
+
+      .main-steps__item
+        p.main-steps__item-header
+          +step_icon_2
+          | Шаг 2
+
+        h3.main-steps__item-title
+          | Обратная связь с менеджером
+
+        p.main-steps__item-text
+          | Вам перезвонит менеджер, уточнит пожелания  и предложит варианты туров.
+
+      .main-steps__item
+        p.main-steps__item-header
+          +step_icon_3
+          | Шаг 3
+
+        h3.main-steps__item-title
+          | Получите документы
+
+        p.main-steps__item-text
+          | Отправим их по почте, курьером или приготовим документы в офисе вместе с кофе.
+
+      .main-steps__item
+        p.main-steps__item-header
+          +step_icon_4
+          | Шаг 4
+
+        h3.main-steps__item-title
+          | Отправляйтесь в отпуск мечты!
+
+        p.main-steps__item-text
+          | Перед поездкой заранее напомним вам о датах  и проиструктируем о деталях путешествия.
+
+    .main-steps__buttons
+      button.main-steps__button.main-steps__button--defined(type="button", data-id="booking")
+        | Я уже знаю куда еду
+
+      button.main-steps__button.main-steps__button--undefined(type="button", data-id="booking")
+        | Предложите нам варианты

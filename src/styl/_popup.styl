@@ -1,0 +1,255 @@
+$formWidth = 656px;
+
+.popup
+  display none
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background-color rgba(#293033 .9)
+  z-index 4
+  overflow scroll
+
+.popup__wrapper
+  position fixed
+  width 720px
+  height 498px
+  box-sizing border-box
+  display flex
+  position relative
+  flex-direction column
+  left 50%
+  top 50%
+  transform translate(-50%, -50%)
+  border-radius 4px
+  padding 32px
+  background #fff
+  margin 80px 0 80px
+
+  +respond-to($xsmall)
+    width calc(100% - 32px)
+    box-sizing border-box
+
+.popup__close-btn
+  position: absolute
+  display: block
+  width 16px
+  height 16px
+  top: 16px
+  right: 16px
+  z-index: 3
+  &:before
+    position: absolute
+    left: 0
+    top: 7px
+    content: ''
+    height: 2px
+    width: 18px
+    background: #CFDAE6
+    transform: rotate(45deg)
+    box-shadow: none
+    transition: transform .25s
+    opacity: 1
+
+  &:after
+    position: absolute
+    left: 0
+    top: 7px
+    content: ''
+    height: 2px
+    width: 18px
+    background: #CFDAE6
+    transform: rotate(-45deg)
+    box-shadow: none
+    transition: transform .25s
+
+.popup__title
+  font-size 28px
+  line-height 36px
+  font-weight 600
+  color #19082B
+  margin-bottom 16px
+
+.popup__text
+  font-size 16px
+  line-height 22px
+  font-weight 400
+  color #303F4D
+  @extend .ie-full
+  margin-bottom 24px
+
+.popup__form
+  position relative
+  background #fff
+  display flex
+  flex-direction column
+  width 100%
+  box-sizing border-box
+  &:after
+    content ''
+    position absolute
+    width 292px
+    height 251px
+    top 50%
+    transform translateY(-50%)
+    right 0
+    background url(images/svg/popup_callback_img.svg) center no-repeat
+
+.popup__form-input
+  @extend .input
+  padding-top 18px
+  padding-bottom 18px
+  margin-bottom 16px
+  border 1px solid #C0C4D1
+  width 100%
+  box-sizing border-box
+
+.popup__form-btn
+  @extend .button
+  margin-top 24px
+
+.popup--callback
+  .popup__wrapper
+    margin 0
+
+  .popup__form
+    padding-right calc(100% - 332px)
+    &:after
+      content ''
+      position absolute
+      width 292px
+      height 251px
+      top 50%
+      transform translateY(-50%)
+      right 0
+      background url(images/svg/popup_callback_img.svg) center no-repeat
+
+.popup__form-switcher
+  margin-bottom 32px
+
+.popup__form-input--textarea
+  height 104px
+  margin-bottom 0
+
+
+.popup--order-prime
+  .popup__wrapper
+    height 776px
+
+  .popup__form
+    &:after
+      display none
+
+  .popup__form-slides
+    width $formWidth
+    overflow hidden
+
+  .popup__form-slides-list
+    display flex
+    width $formWidth * 2
+    transform translateX(0)
+    transition .35s ease-in
+
+  .popup__form-wrapper:not(.popup__form-wrapper--full)
+    width $formWidth
+    box-sizing border-box
+    padding-right $formWidth - 332px
+    padding-bottom 6px
+    &:after
+      content ''
+      position absolute
+      width 292px
+      height 272px
+      top 0
+      left $formWidth - 292px
+      background url(images/photo/order_tour.png) center no-repeat
+      background-size cover
+      @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+        background url(images/photo/order_tour@2x.png) center no-repeat
+        background-size cover
+
+  .popup__form-wrapper--full
+    width $formWidth
+    box-sizing border-box
+    background #fff
+    padding-right 0
+    display flex
+    flex-wrap: wrap
+    justify-content: space-between
+    &:after
+      display none
+
+  .popup__wrapper--full
+    .popup__form-slides-list
+      transform translateX(-($formWidth))
+
+.popup__form-switcher
+  width 100%
+  display flex
+  border 1px solid #198CFF
+  border-radius 4px
+  box-sizing border-box
+
+.popup__form-switcher-item
+  width 50%
+
+.popup__form-switcher-radio
+  display none
+
+.popup__form-switcher-label
+  font-size 16px
+  line-height 24px
+  font-weight 400
+  padding 16px
+  width 100%
+  display block
+  box-sizing border-box
+  text-align center
+  cursor pointer
+
+.popup__form-switcher-item:first-child
+  .popup__form-switcher-radio:checked + .popup__form-switcher-label
+    background: linear-gradient(330.07deg, #198CFF 11.44%, #68B3FF 88.56%)
+    color #fff
+
+.popup__form-switcher-item:last-child
+  .popup__form-switcher-radio:checked + .popup__form-switcher-label
+    background: linear-gradient(-330.07deg, #198CFF 11.44%, #68B3FF 88.56%)
+    color #fff
+
+.popup__form-input--half
+  width calc(50% - 16px)
+
+.popup__form-btn--full
+  width 100%
+
+input[type="date"]
+  color #7B7B7B
+
+.popup__img
+  margin-bottom 24px
+
+.popup__title--with-icon
+  position relative
+  padding-left 48px
+
+  &:before
+    content ''
+    width 32px
+    height 32px
+    position absolute
+    top 0
+    left 0
+    background url(images/svg/checkmark.svg) center no-repeat
+
+.popup--thanks
+  .popup__wrapper
+    top 0
+    transform translate(-50%, 0)
+    display flex
+    flex-direction column
+    align-items center
+
+  .popup__text
+    text-align center

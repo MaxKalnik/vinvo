@@ -1,0 +1,299 @@
+.header
+  position: relative
+  background: url('images/header_pic.png') bottom no-repeat
+  height: 694px
+  box-sizing: border-box
+  display: flex
+  align-items: center
+  flex-direction: column
+  background-size cover
+  padding 46px 0
+  @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+    background: url('images/header_pic@2x.png') bottom no-repeat
+    background-size: cover
+
+  +respond-to($medium)
+    background: url('images/header_pic.png') bottom no-repeat
+    height: 694px
+    background-size cover
+    @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+      background: url('images/header_pic@2x.png') bottom no-repeat
+      background-size: cover
+
+  +respond-to($small)
+    background: url('images/header_pic_768.png') bottom no-repeat
+    height: 768px
+    background-size cover
+    padding 32px 0
+    @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+      background: url('images/header_pic_768@2x.png') bottom no-repeat
+      background-size: cover
+
+  +respond-to($xsmall)
+    background: url('images/header_pic_768.png') bottom no-repeat
+    height: 512px
+    background-size cover
+    @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+      background: url('images/header_pic_768@2x.png') bottom no-repeat
+      background-size: cover
+
+  +respond-to($xxsmall)
+    background: url('images/header_pic_320.png') bottom no-repeat
+    height: 512px
+    background-size cover
+    box-sizing border-box
+    padding 16px 0 32px 0
+    @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+      background: url('images/header_pic_320@2x.png') bottom no-repeat
+      background-size: cover
+
+.header__wrapper
+  @extend .container
+  display flex
+  flex-direction column
+  height 100%
+
+.header__main-logo-img
+  +respond-to($small)
+    width 190px
+
+  +respond-to($xsmall)
+    width 135px
+
+.header__top
+  display flex
+  justify-content space-between
+  align-items center
+
+.header__user-block-wrapper
+  position relative
+
+.header__user-block-wrapper--active
+  .header__user-block
+    +respond-to($xsmall)
+      display block
+
+.header__user-block
+  display flex
+  justify-content space-between
+  align-items center
+
+  +respond-to($xsmall)
+    display none
+
+.header__tel-numbers
+  position relative
+  margin-right 48px
+
+  +respond-to($small)
+    margin-right 48px
+
+.header__tel-btn
+  position relative
+  font-weight: 700
+  line-height: normal
+  font-size: 20px
+  line-height 24px
+  color: #fff
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1)
+  padding-left 36px
+
+  &:before
+    content ''
+    width 24px
+    height 24px
+    position absolute
+    left 0
+    top 0
+    background url(images/icons/whats_app.svg) center no-repeat
+    background-size cover
+
+  +respond-to($xsmall)
+    font-size 16px
+    padding-left 24px
+    &:before
+      width 16px
+      height 16px
+      top 2px
+
+.header__tel-toggle
+  width 36px
+  height 12px
+  background url(images/icons/ic_expand_white.svg) center no-repeat
+
+  +respond-to($xsmall)
+    width 26px
+
+.header__tel-other
+  display none
+  flex-direction column
+  position absolute
+  opacity 0
+  transition .25s
+
+  .header__tel-btn
+    margin-bottom 24px
+    &:first-child
+      margin-top 24px
+
+    &:last-child
+      margin-bottom 0
+
+.header__tel-numbers--active
+  .header__tel-other
+    display flex
+    opacity 1
+
+  .header__tel-toggle
+    transform scale(-1)
+
+.header__callback-btn
+  @extend .button-white
+  padding-top 18px
+  padding-bottom 18px
+
+  +respond-to($small)
+    padding 18px
+
+.header__main
+  margin-top 160px
+  display flex
+  flex-direction column
+  align-items center
+
+  +respond-to($small)
+    margin-top 104px
+
+  +respond-to($xsmall)
+    margin-top 38px
+
+.header__title
+  font-weight: 700
+  line-height: normal
+  font-size: 52px
+  text-align: center
+  color: #FFFFFF
+  text-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1)
+  margin-top 14px
+
+  +respond-to($small)
+    margin-bottom 24px
+
+  +respond-to($xsmall)
+    margin-top 0
+    font-size 32px
+    line-height 44px
+    margin-bottom 16px
+
+.header__main-text
+  font-weight: normal
+  line-height: 31px
+  font-size: 20px
+  text-align: center
+  color: #FFFFFF
+  text-shadow: 5px 0px 10px rgba(0, 0, 0, 0.1)
+  margin-bottom 32px
+  width 70%
+
+  +respond-to($small)
+    width 100%
+
+  +respond-to($xsmall)
+    font-size 16px
+    line-height 24px
+    margin-bottom 16px
+
+.header__callback-form
+  display flex
+
+  +respond-to($small)
+    width 81%
+
+  +respond-to($xsmall)
+    width 100%
+    flex-direction column
+    margin-bottom 32px
+
+.header__partners-img
+  +respond-to($small)
+    transform scale(.7)
+
+  +respond-to($xsmall)
+    &:nth-child(n+4)
+      display none
+
+  +respond-to($xxsmall)
+    transform scale(1)
+    width 27%
+    height 31px
+    &:nth-child(n+4)
+      display none
+
+.header__callback-form-tel
+  @extend .input
+  width 317px
+  box-shadow: 0px 8px 16px rgba(21, 6, 26, 0.2)
+  border-radius: 6px 0 0 6px
+
+  +respond-to($xsmall)
+    width 100%
+    border-radius: 6px 6px 0 0
+    box-sizing border-box
+    padding 12px 16px
+
+.header__callback-form-btn
+  @extend .button
+  border-radius: 0px 6px 6px 0px
+
+  +respond-to($xsmall)
+    border-radius: 0 0 6px 6px
+    padding 14px 16px
+
+.header__partners
+  display flex
+  margin-top auto
+  justify-content space-between
+  opacity .7
+
+.header__user-block-toggle
+  display none
+  width 16px
+  height 15px
+  position: relative
+  display: none
+  width: 16px
+  height: 15px
+  background: none
+  outline: none
+  border:none
+  padding: 0
+  box-sizing: border-box
+  cursor: pointer
+
+  &:before
+    content: ''
+    position: absolute
+    display: block
+    top: 0
+    left: 0
+    background: #fff
+    box-shadow: 0 6px #fff, 0 12px #fff
+    height: 3px
+    width: 100%
+    border-radius: 20px
+    opacity: 0
+
+  &:after
+    content: ''
+    position: absolute
+    display: block
+    top: 0
+    left: 0
+    background: #fff
+    box-shadow: 0 6px #fff, 0 12px #fff
+    height: 3px
+    width: 100%
+    border-radius: 20px
+
+  +respond-to($xsmall)
+    display block

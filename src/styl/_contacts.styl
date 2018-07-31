@@ -1,0 +1,164 @@
+.contacts
+  background #fff
+  padding 104px 0 64px 0
+
+  +respond-to($small)
+    padding 64px 0 32px 0
+
+.contacts__wrapper
+  @extend .container
+
+.contacts__user-block
+  margin 48px 0 56px 0
+  display flex
+  flex-direction row
+  justify-content space-between
+
+  +respond-to($medium)
+    flex-wrap wrap
+
+  +respond-to($small)
+    margin 48px 0 32px 0
+
+  +respond-to($xsmall)
+    flex-direction column
+    align-items center
+
+.contacts__managers
+  display flex
+  flex-direction row
+
+  +respond-to($xsmall)
+    width 100%
+    justify-content space-around
+    margin-bottom 24px
+
+.contacts__manager
+  display flex
+  flex-direction row
+  margin-right 80px
+
+  +respond-to($small)
+    margin-right 63px
+
+  +respond-to($xsmall)
+    flex-direction column
+    width 111px
+    margin-right 0
+    align-items center
+    justify-content center
+
+.contacts__manager-photo
+  margin-right 24px
+
+  +respond-to($small)
+    margin-right 16px
+
+  +respond-to($xsmall)
+    margin-right 0
+    margin-bottom 8px
+
+.contacts__manager-text-block
+  @extend .flex-card
+  justify-content flex-start
+  align-items flex-start
+
+  +respond-to($xsmall)
+    margin-bottom 8px
+    display flex
+    flex-direction column
+    align-items center
+
+.contacts__manager-name
+  color #303F4D
+  font-size 20px
+  line-height 24px
+  font-weight 500
+
+.contacts__manager-text
+  color #303F4D
+  font-size 16px
+  line-height 24px
+  font-weight 300
+
+.contacts__info
+  display flex
+  flex-direction row
+  margin-right 80px
+
+  +respond-to($medium)
+    margin-right 0
+
+
+.contacts__info-img
+  margin-right 20px
+
+.contacts__info-wrapper
+  display flex
+  flex-direction column
+
+.contacts__info-tel
+  color #303F4D
+  font-size 20px
+  line-height 24px
+  font-weight 500
+
+.contacts__info-mail
+  color #303F4D
+  font-size 16px
+  line-height 24px
+  font-weight 300
+
+.contacts__callback-button
+  @extend .button
+  margin-left auto
+  padding 19px 32px
+
+  +respond-to($medium)
+    margin-top 32px
+    margin-left auto
+    margin-right auto
+
+.contacts__maps-wrapper
+  @extend .flex-row
+
+  +respond-to($medium)
+    align-items flex-start
+    justify-content space-between
+
+  +respond-to($xsmall)
+    flex-direction column
+
+.contacts__map-block
+  width 547px
+
+  +respond-to($medium)
+    width 49%
+
+  +respond-to($xsmall)
+    width 100%
+    margin-bottom 24px
+    &:last-child
+      margin-bottom 0
+
+.contacts__map-block-adress
+  font-size 18px
+  line-height 28px
+  font-weight 400
+
+.contacts__map-block-map
+  margin-bottom 24px
+
+  +respond-to($xsmall)
+    margin-bottom 16px
+
+#map1,
+#map2
+  width 100%
+  height 392px
+
+  +respond-to($xsmall)
+    height 232px
+
+
+

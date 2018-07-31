@@ -1,0 +1,241 @@
+.main-steps
+  position: relative
+  background: url('images/photo/bg_steps.png') center no-repeat
+  padding 88px 0 440px 0
+  box-sizing: border-box
+  background-size cover
+  @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+    background: url('images/photo/bg_steps@2x.png') center no-repeat
+    background-size: cover
+
+  +respond-to($medium)
+    background: url('images/photo/bg_steps.png') center no-repeat
+    background-size cover
+    padding 88px 0 360px 0
+    @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+      background: url('images/photo/bg_steps@2x.png') center no-repeat
+      background-size: cover
+
+  +respond-to($small)
+    background: url('images/photo/bg_steps_768.png') center no-repeat
+    background-size cover
+    padding 64px 0 340px 0
+    @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+      background: url('images/photo/bg_steps_768@2x.png') center no-repeat
+      background-size: cover
+
+  +respond-to($xsmall)
+    background: url('images/photo/bg_steps_768.png') center no-repeat
+    background-size cover
+    padding 32px 0 340px 0
+    @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+      background: url('images/photo/bg_steps_768@2x.png') center no-repeat
+      background-size: cover
+
+  +respond-to($xxsmall)
+    background: url('images/photo/bg_steps_320.png') center no-repeat
+    background-size cover
+    @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+      background: url('images/photo/bg_steps_320@2x.png') center no-repeat
+      background-size: cover
+
+.main-steps__wrapper
+  @extend .container
+
+.main-steps__items
+  display flex
+  flex-direction column
+  margin 72px 0 64px 0
+  background: url('images/photo/steps.png') top no-repeat
+  background-size contain
+  @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+    background: url('images/photo/steps@2x.png') top no-repeat
+    background-size: contain
+
+  +respond-to($medium)
+    background none
+
+  +respond-to($small)
+    margin-top 32px
+
+  +respond-to($small)
+    margin-bottom 32px
+
+.main-steps__item-icon
+  display none
+  position absolute
+  top 0
+  left 0
+  width 96px
+  height 96px
+
+  +respond-to($medium)
+    display block
+
+  +respond-to($xsmall)
+    width 64px
+    height 64px
+
+.main-steps__item
+  position relative
+  box-sizing border-box
+  &:nth-child(1)
+    margin-bottom 16px
+    width 308px
+
+  &:nth-child(2)
+    margin-left 472px
+    margin-bottom 97px
+    width 363px
+
+  &:nth-child(3)
+    margin-left 210px
+    width 379px
+
+  &:nth-child(4)
+    margin-left auto
+    width 430px
+
+  &:before
+    content ''
+    display none
+    position absolute
+    width 0
+    height calc(100% - 96px)
+    left 50px
+    bottom 0
+    border-left 1px dashed #198CFF
+
+  &:after
+    content ''
+    display none
+    position absolute
+    width 15px
+    height 14px
+    bottom calc((100% - 103px)/2)
+    left 43px
+    background url(images/svg/plane.svg) center no-repeat
+    background-size cover
+
+  +respond-to($medium)
+    padding-left 120px
+    padding-bottom 48px
+    &:before,
+    &:after
+      display block
+
+    &:nth-child(1)
+      margin-bottom 0
+      width 100%
+
+    &:nth-child(2)
+      margin-left 0
+      margin-bottom 0
+      width 100%
+
+    &:nth-child(3)
+      margin-left 0
+      margin-bottom 0
+      width 100%
+
+    &:nth-child(4)
+      margin-left 0
+      margin-bottom 0
+      padding-bottom 0
+      padding-bottom 0
+      width 100%
+
+      &:before,
+      &:after
+        display none
+
+  +respond-to($xsmall)
+    padding-left 0
+    padding-bottom 0
+    margin-bottom 24px
+    &:nth-child(1)
+      margin-bottom 24px
+
+    &:nth-child(2)
+      margin-bottom 24px
+
+    &:nth-child(3)
+      margin-bottom 24px
+
+    &:nth-child(4)
+      margin-bottom 0
+
+    &:last-child
+      margin-bottom 0
+
+    &:before,
+    &:after
+      display none
+
+.main-steps__item-header
+  display inline-block
+  width auto
+  padding 9px 16px
+  color #fff
+  font-size 25px
+  line-height 30px
+  font-weight 500
+  background: linear-gradient(259.84deg, #198CFF -9.85%, #68B3FF 48.37%)
+  border-radius: 6px
+  margin-bottom 18px
+
+  +respond-to($xsmall)
+    margin-top 18px
+    margin-left 80px
+    font-size 18px
+    line-height 22px
+    padding 6px 10px
+
+.main-steps__item-title
+  font-size 25px
+  line-height 32px
+  font-weight 500
+  margin-bottom 10px
+
+  +respond-to($xsmall)
+    margin-top 16px
+    font-size 18px
+    line-height 22px
+
+.main-steps__item-text
+  font-size 16px
+  line-height 28px
+  font-weight 400
+
+.main-steps__buttons
+  display flex
+  justify-content center
+
+  +respond-to($xsmall)
+    flex-direction column
+
+.main-steps__button--defined
+  @extend .button-blue
+  padding 22px
+  width 263px
+  margin-right 24px
+
+  +respond-to($small)
+    width calc(50% - 16px)
+
+  +respond-to($xsmall)
+    width 100%
+    margin-right 0
+    margin-bottom 8px
+
+.main-steps__button--undefined
+  @extend .button
+  padding 23px
+  width 300px
+
+  +respond-to($small)
+    width calc(50% - 16px)
+
+  +respond-to($xsmall)
+    width 100%
+

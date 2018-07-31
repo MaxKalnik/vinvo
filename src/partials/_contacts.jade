@@ -1,0 +1,55 @@
+include ./svg-mixins
+
+.contacts
+  .contacts__wrapper
+    h2.section__title
+      | Мы всегда рады Вашим звонкам
+
+    .contacts__main
+      .contacts__user-block
+        .contacts__managers
+          .contacts__manager
+            img.contacts__manager-photo(src="images/photo/aleksandra.png", srcset="images/photo/aleksandra@2x.png 2x")
+            .contacts__manager-text-block
+              p.contacts__manager-name
+                | Александра
+
+              p.contacts__manager-text
+                | Менеджер
+
+          .contacts__manager
+            img.contacts__manager-photo(src="images/photo/anastacia.png", srcset="images/photo/anastacia@2x.png 2x")
+            .contacts__manager-text-block
+              p.contacts__manager-name
+                | Анастасия
+
+              p.contacts__manager-text
+                | Менеджер
+
+        .contacts__info
+          +tel_svg
+
+          .contacts__info-wrapper
+            a.contacts__info-tel(href="tel:+380443320267")
+              | +38(044)-332-02-67
+
+            a.contacts__info-mail(href="mailto:info@vinvotravel.com")
+              | info@vinvotravel.com
+
+        button.contacts__callback-button(type="button", data-id="callback")
+          |  Заказать обратный звонок
+
+      .contacts__maps-wrapper
+        .contacts__map-block
+          .contacts__map-block-map
+            #map1
+
+          p.contacts__map-block-adress
+            | Украина, г. Киев, пер. Тараса Шевченко 18/19, этаж 2, офис 205
+
+        .contacts__map-block
+          .contacts__map-block-map
+            #map2
+
+          p.contacts__map-block-adress
+            | Украина, г. Киев, Харьковское шоссе 170, офис 254

@@ -1,0 +1,32 @@
+mixin tours(country)
+  div(class="tours__item tours__item--#{country.src}")
+    h3.tours__item-country
+      = country.name
+
+    p.tours__item-price
+      | от 
+
+      span.semibold
+        = country.price
+
+      |  грн
+
+    button.tours__item-button(type="button", data-country="#{country.name}")
+      span.tours__item-button-txt Подобрать тур 
+      span.tours__item-button-txt.tours__item-button-txt--mob Туры 
+      = country.btnName
+
+mixin promo(data)
+  div(class='#{data.blockName}')
+    div(class='#{data.blockName}__wrapper')
+      h2.section__title.section__title--white.section__title--left
+        = data.title
+
+      p(class='#{data.blockName}__text')
+        = data.text
+
+      button(class='#{data.blockName}__button #{data.blockName}__button--data.button', type="button", data-id="booking")
+        = data.btnText
+
+    if(data.withImage)
+      img(class='#{data.blockName}__img' src="images/photo/#{data.img}.png", srcset="images/photo/#{data.img}@2x.png 2x")

@@ -1,0 +1,111 @@
+.footer
+  background #17191A
+  padding 36px 0 32px 0
+
+.footer__wrapper
+  @extend .container
+
+.footer__main
+  margin-bottom 28px
+  display flex
+  flex-direction row
+  justify-content space-between
+  align-items center
+
+  +respond-to($xsmall)
+    align-items center
+    margin-bottom 16px
+
+.footer__tel
+  position relative
+  font-weight: 700
+  line-height: normal
+  font-size: 20px
+  line-height 24px
+  color: #fff
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1)
+  padding-left 36px
+
+  &:before
+    content ''
+    width 24px
+    height 24px
+    position absolute
+    left 0
+    top 0
+    background url(images/icons/whats_app.svg) center no-repeat
+    background-size cover
+
+  +respond-to($xsmall)
+    font-size 16px
+    padding-left 24px
+    &:before
+      width 16px
+      height 16px
+      top 2px
+
+.footer__tel-toggle
+  width 36px
+  height 12px
+  background url(images/icons/ic_expand_white.svg) center no-repeat
+
+  +respond-to($xsmall)
+    width 26px
+
+.footer__tel-numbers
+  position relative
+
+.footer__tel-other
+  display none
+  flex-direction column
+  position absolute
+  top: 0
+  transform: translateY(-115%)
+  opacity 0
+  transition .25s
+
+  +respond-to($xsmall)
+    transform: translateY(-110%)
+
+  .footer__tel
+    margin-bottom 24px
+    &:first-child
+      margin-top 24px
+
+    &:last-child
+      margin-bottom 0
+
+.footer__tel-numbers--active
+  .footer__tel-other
+    display flex
+    opacity 1
+
+  .footer__tel-toggle
+    transform scale(-1)
+
+.footer__under-text
+  opacity .5
+  color #fff
+  font-size 12px
+  line-height 16px
+  font-weight 400
+  text-align center
+
+.footer__socials-item
+  display inline-block
+  width 32px
+  height 32px
+  margin-right 16px
+  box-sizing border-box
+  transition .25s
+  border-radius 50%
+  &:last-child
+    margin-right 0
+
+  &:hover
+    svg
+      border 1px solid #fff
+
+svg
+  border 1px solid transparent
+  border-radius 50%
