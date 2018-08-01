@@ -221,6 +221,7 @@ input {
   outline: none;
   box-shadow: none;
   margin: 0;
+  -webkit-appearance: none !important;
 }
 button {
   outline: none;
@@ -229,7 +230,7 @@ button {
   cursor: pointer;
   padding: 0;
   margin: 0;
-  -webkit-appearance: none;
+  -webkit-appearance: none !important;
   cursor: pointer;
 }
 .container,
@@ -518,15 +519,15 @@ button {
 .header__user-block-wrapper--active .header__user-block-close {
   display: block;
   position: absolute;
-  width: 16px;
-  height: 16px;
-  right: 12px;
-  top: 12px;
+  width: 32px;
+  height: 32px;
+  right: 10px;
+  top: 10px;
 }
 .header__user-block-wrapper--active .header__user-block-close:before {
   position: absolute;
-  left: 0;
-  top: 7px;
+  left: 8px;
+  top: 15px;
   content: '';
   height: 2px;
   width: 18px;
@@ -538,8 +539,8 @@ button {
 }
 .header__user-block-wrapper--active .header__user-block-close:after {
   position: absolute;
-  left: 0;
-  top: 7px;
+  left: 8px;
+  top: 15px;
   content: '';
   height: 2px;
   width: 18px;
@@ -573,6 +574,10 @@ button {
 .header__tel-numbers {
   position: relative;
   margin-right: 48px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
 }
 @media only screen and (max-width: 1023px) {
   .header__tel-numbers {
@@ -581,6 +586,7 @@ button {
 }
 @media only screen and (max-width: 767px) {
   .header__tel-numbers {
+    display: block;
     overflow: hidden;
   }
 }
@@ -617,12 +623,13 @@ button {
 }
 .header__tel-toggle {
   width: 36px;
-  height: 12px;
+  height: 32px;
   background: url("images/icons/ic_expand_white.svg") center no-repeat;
 }
 @media only screen and (max-width: 767px) {
   .header__tel-toggle {
-    width: 26px;
+    position: relative;
+    top: 10px;
   }
 }
 .header__tel-other {
@@ -644,7 +651,7 @@ button {
   margin-bottom: 18px;
 }
 .header__tel-other .header__tel-btn:first-child {
-  margin-top: 16px;
+  margin-top: 26px;
 }
 .header__tel-other .header__tel-btn:last-child {
   margin-bottom: 0;
@@ -803,12 +810,10 @@ button {
 }
 .header__user-block-toggle {
   display: none;
-  width: 16px;
-  height: 15px;
+  width: 32px;
+  height: 32px;
   position: relative;
   display: none;
-  width: 16px;
-  height: 15px;
   background: none;
   outline: none;
   border: none;
@@ -825,7 +830,7 @@ button {
   background: #fff;
   box-shadow: 0 6px #fff, 0 12px #fff;
   height: 3px;
-  width: 100%;
+  width: 16px;
   border-radius: 20px;
   opacity: 0;
 }
@@ -833,12 +838,12 @@ button {
   content: '';
   position: absolute;
   display: block;
-  top: 0;
-  left: 0;
+  top: 8px;
+  left: 8px;
   background: #fff;
   box-shadow: 0 6px #fff, 0 12px #fff;
   height: 3px;
-  width: 100%;
+  width: 16px;
   border-radius: 20px;
 }
 @media only screen and (max-width: 767px) {
@@ -2783,7 +2788,7 @@ button {
 }
 .footer__tel-toggle {
   width: 36px;
-  height: 12px;
+  height: 32px;
   background: url("images/icons/ic_expand_white.svg") center no-repeat;
 }
 @media only screen and (max-width: 767px) {
@@ -2793,6 +2798,10 @@ button {
 }
 .footer__tel-numbers {
   position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
 }
 .footer__tel-other {
   display: none;
@@ -2867,10 +2876,12 @@ svg {
   height: 100%;
   background-color: rgba(41,48,51,0.9);
   z-index: 4;
+  -webkit-overflow-scrolling: touch;
   overflow: scroll;
 }
 .popup__wrapper {
   position: fixed;
+  -webkit-overflow-scrolling: touch;
   width: 720px;
   height: 498px;
   box-sizing: border-box;
@@ -2897,16 +2908,22 @@ svg {
 .popup__close-btn {
   position: absolute;
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
   top: 16px;
   right: 16px;
   z-index: 3;
 }
+@media only screen and (max-width: 767px) {
+  .popup__close-btn {
+    right: 6px;
+    top: 6px;
+  }
+}
 .popup__close-btn:before {
   position: absolute;
-  left: 0;
-  top: 7px;
+  left: 8px;
+  top: 13px;
   content: '';
   height: 2px;
   width: 18px;
@@ -2918,8 +2935,8 @@ svg {
 }
 .popup__close-btn:after {
   position: absolute;
-  left: 0;
-  top: 7px;
+  left: 8px;
+  top: 13px;
   content: '';
   height: 2px;
   width: 18px;

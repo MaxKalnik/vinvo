@@ -92,15 +92,15 @@
   .header__user-block-close
     display block
     position absolute
-    width 16px
-    height 16px
-    right 12px
-    top 12px
+    width 32px
+    height 32px
+    right 10px
+    top 10px
 
     &:before
       position: absolute
-      left: 0
-      top: 7px
+      left: 8px
+      top: 15px
       content: ''
       height: 2px
       width: 18px
@@ -112,8 +112,8 @@
 
     &:after
       position: absolute
-      left: 0
-      top: 7px
+      left: 8px
+      top: 15px
       content: ''
       height: 2px
       width: 18px
@@ -139,11 +139,14 @@
 .header__tel-numbers
   position relative
   margin-right 48px
+  display flex
+  align-items center
 
   +respond-to($small)
     margin-right 12px
 
   +respond-to($xsmall)
+    display block
     overflow hidden
 
 .header__tel-btn
@@ -176,11 +179,12 @@
 
 .header__tel-toggle
   width 36px
-  height 12px
+  height 32px
   background url(images/icons/ic_expand_white.svg) center no-repeat
 
   +respond-to($xsmall)
-    width 26px
+    position relative
+    top 10px
 
 .header__tel-other
   display none
@@ -196,7 +200,7 @@
   .header__tel-btn
     margin-bottom 18px
     &:first-child
-      margin-top 16px
+      margin-top 26px
 
     &:last-child
       margin-bottom 0
@@ -322,12 +326,10 @@
 
 .header__user-block-toggle
   display none
-  width 16px
-  height 15px
+  width 32px
+  height 32px
   position: relative
   display: none
-  width: 16px
-  height: 15px
   background: none
   outline: none
   border:none
@@ -344,7 +346,7 @@
     background: #fff
     box-shadow: 0 6px #fff, 0 12px #fff
     height: 3px
-    width: 100%
+    width: 16px
     border-radius: 20px
     opacity: 0
 
@@ -352,12 +354,12 @@
     content: ''
     position: absolute
     display: block
-    top: 0
-    left: 0
+    top: 8px
+    left: 8px
     background: #fff
     box-shadow: 0 6px #fff, 0 12px #fff
     height: 3px
-    width: 100%
+    width: 16px
     border-radius: 20px
 
   +respond-to($xsmall)
