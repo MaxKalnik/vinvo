@@ -9,6 +9,7 @@ include ./svg-mixins
       .header__user-block-wrapper
         button.header__user-block-toggle(type="button")
         .header__user-block
+          button.header__user-block-close(type="button")
           .header__tel-numbers
 
             a.header__tel-btn(href="tel:+380443320258")
@@ -37,8 +38,8 @@ include ./svg-mixins
         | Хватит работать, вы заслужили отдых — оставьте заявку прямо сейчас  и получите тур по горячей цене!
 
       form.header__callback-form(action="", method="POST")
-        input.header__callback-form-tel(type="tel", placeholder="+380(__)___-__-__", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}" required)
-        button.header__callback-form-btn(type="button", data-id="thank-you")
+        input.header__callback-form-tel(type="tel", name="tel", placeholder="+380(__)___-__-__", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}" required)
+        button.header__callback-form-btn(type="button", data-id="booking", data-type="undefined-type")
           | Подобрать тур
 
     .header__partners

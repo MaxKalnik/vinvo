@@ -11,7 +11,7 @@ mixin tours(country)
 
       |  грн
 
-    button.tours__item-button(type="button", data-country="#{country.name}")
+    button.tours__item-button(type="button", data-country="#{country.name}", data-id="booking", data-type="defined-type")
       span.tours__item-button-txt Подобрать тур 
       span.tours__item-button-txt.tours__item-button-txt--mob Туры 
       = country.btnName
@@ -25,7 +25,7 @@ mixin promo(data)
       p(class='#{data.blockName}__text')
         = data.text
 
-      button(class='#{data.blockName}__button #{data.blockName}__button--data.button', type="button", data-id="booking")
+      button(class='#{data.blockName}__button #{data.blockName}__button--data.button', type="button", data-id="booking", , data-type="undefined-type")
         = data.btnText
 
     if(data.withImage)

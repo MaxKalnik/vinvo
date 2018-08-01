@@ -1,4 +1,5 @@
 $formWidth = 656px;
+$formWidth-small = 100%;
 
 .popup
   display none
@@ -19,16 +20,17 @@ $formWidth = 656px;
   display flex
   position relative
   flex-direction column
-  left 50%
-  top 50%
-  transform translate(-50%, -50%)
   border-radius 4px
   padding 32px
   background #fff
-  margin 80px 0 80px
+  margin 40px auto
 
   +respond-to($xsmall)
     width calc(100% - 32px)
+    min-height 498px
+    height auto
+    padding 16px
+    padding-top 38px
     box-sizing border-box
 
 .popup__close-btn
@@ -109,9 +111,14 @@ $formWidth = 656px;
   @extend .button
   margin-top 24px
 
+  +respond-to($xsmall)
+    padding-left 16px
+    padding-right 16px
+
 .popup--callback
   .popup__wrapper
-    margin 0
+    +respond-to($xsmall)
+      margin 40px auto 20px auto
 
   .popup__form
     padding-right calc(100% - 332px)
@@ -124,9 +131,16 @@ $formWidth = 656px;
       transform translateY(-50%)
       right 0
       background url(images/svg/popup_callback_img.svg) center no-repeat
+      background-size cover
 
-.popup__form-switcher
-  margin-bottom 32px
+    +respond-to($xsmall)
+      padding-right 0
+      &:after
+        position static
+        width 256px
+        height 220px
+        transform none
+        margin 24px auto 0 auto
 
 .popup__form-input--textarea
   height 104px
@@ -137,6 +151,25 @@ $formWidth = 656px;
   .popup__wrapper
     height 776px
 
+    +respond-to($xsmall)
+      position relative
+      min-height 776px
+      height auto
+      padding-bottom 284px
+      &:after
+        content ''
+        position absolute
+        width 256px
+        height 240px
+        bottom 16px
+        left 50%
+        transform translateX(-50%)
+        background url(images/photo/order_tour.png) center no-repeat
+        background-size cover
+        @media (-webkit-min-device-pixel-ratio: 2),( min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)
+          background url(images/photo/order_tour@2x.png) center no-repeat
+          background-size cover
+
   .popup__form
     &:after
       display none
@@ -145,11 +178,17 @@ $formWidth = 656px;
     width $formWidth
     overflow hidden
 
+    +respond-to($xsmall)
+      width $formWidth-small
+
   .popup__form-slides-list
     display flex
     width $formWidth * 2
     transform translateX(0)
     transition .35s ease-in
+
+    +respond-to($xsmall)
+      width $formWidth-small
 
   .popup__form-wrapper:not(.popup__form-wrapper--full)
     width $formWidth
@@ -169,6 +208,13 @@ $formWidth = 656px;
         background url(images/photo/order_tour@2x.png) center no-repeat
         background-size cover
 
+      +respond-to($xsmall)
+        display none
+
+    +respond-to($xsmall)
+      width $formWidth-small
+      padding-right 0
+
   .popup__form-wrapper--full
     width $formWidth
     box-sizing border-box
@@ -180,9 +226,29 @@ $formWidth = 656px;
     &:after
       display none
 
+    +respond-to($xsmall)
+      width $formWidth-small
+      display none
+
   .popup__wrapper--full
+    +respond-to($xsmall)
+      padding-bottom 16px
+      &:after
+        display none
+
+    .popup__form-wrapper
+      +respond-to($xsmall)
+        display none
+
+    .popup__form-wrapper--full
+      +respond-to($xsmall)
+        display block
+
     .popup__form-slides-list
       transform translateX(-($formWidth))
+
+      +respond-to($xsmall)
+        transform translateX(0)
 
 .popup__form-switcher
   width 100%
@@ -190,9 +256,16 @@ $formWidth = 656px;
   border 1px solid #198CFF
   border-radius 4px
   box-sizing border-box
+  margin-bottom 32px
+
+  +respond-to($xsmall)
+    flex-direction column
 
 .popup__form-switcher-item
   width 50%
+
+  +respond-to($xsmall)
+    width 100%
 
 .popup__form-switcher-radio
   display none
@@ -221,14 +294,26 @@ $formWidth = 656px;
 .popup__form-input--half
   width calc(50% - 16px)
 
+  +respond-to($xsmall)
+    width 100%
+
 .popup__form-btn--full
   width 100%
+
+.popup__form-btn-lg
+  +respond-to($xsmall)
+    display none
 
 input[type="date"]
   color #7B7B7B
 
 .popup__img
   margin-bottom 24px
+
+  +respond-to($xsmall)
+    width 100%
+    max-width 334px
+    height auto
 
 .popup__title--with-icon
   position relative
@@ -245,8 +330,6 @@ input[type="date"]
 
 .popup--thanks
   .popup__wrapper
-    top 0
-    transform translate(-50%, 0)
     display flex
     flex-direction column
     align-items center

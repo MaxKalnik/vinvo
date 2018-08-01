@@ -14,6 +14,7 @@
           <div class="header__user-block-wrapper">
             <button type="button" class="header__user-block-toggle"></button>
             <div class="header__user-block">
+              <button type="button" class="header__user-block-close"></button>
               <div class="header__tel-numbers"><a href="tel:+380443320258" class="header__tel-btn">+38 (044) 332-02-58</a>
                 <button type="button" class="header__tel-toggle"></button>
                 <div class="header__tel-other"><a href="tel:+380443320258" class="header__tel-btn">+38 (044) 332-02-58</a><a href="tel:+380443320258" class="header__tel-btn">+38 (044) 332-02-58</a><a href="tel:+380443320258" class="header__tel-btn">+38 (044) 332-02-58</a></div>
@@ -26,8 +27,8 @@
           <h1 class="header__title">Кажется, Вам давно пора в отпуск</h1>
           <p class="header__main-text">Хватит работать, вы заслужили отдых — оставьте заявку прямо сейчас  и получите тур по горячей цене!</p>
           <form action="" method="POST" class="header__callback-form">
-            <input type="tel" placeholder="+380(__)___-__-__" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required class="header__callback-form-tel">
-            <button type="button" data-id="thank-you" class="header__callback-form-btn">Подобрать тур</button>
+            <input type="tel" name="tel" placeholder="+380(__)___-__-__" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required class="header__callback-form-tel">
+            <button type="button" data-id="booking" data-type="undefined-type" class="header__callback-form-btn">Подобрать тур</button>
           </form>
         </div>
         <div class="header__partners"><img src="images/logo/join_up.png" srcset="images/logo/join_up@2x.png 2x" class="header__partners-img"><img src="images/logo/anex_tour.png" srcset="images/logo/anex_tour@2x.png 2x" class="header__partners-img"><img src="images/logo/pegas.png" srcset="images/logo/pegas@2x.png 2x" class="header__partners-img"><img src="images/logo/coral_travel.png" srcset="images/logo/coral_travel@2x.png 2x" class="header__partners-img"><img src="images/logo/tez_tour.png" srcset="images/logo/tez_tour@2x.png 2x" class="header__partners-img"><img src="images/logo/mouzenidis.png" srcset="images/logo/mouzenidis@2x.png 2x" class="header__partners-img"></div>
@@ -42,63 +43,63 @@
                 <h3 class="tours__item-country">Болгария
                 </h3>
                 <p class="tours__item-price">от <span class="semibold">5900</span> грн</p>
-                <button type="button" data-country="Болгария" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в Болгарию
+                <button type="button" data-country="Болгария" data-id="booking" data-type="defined-type" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в Болгарию
                 </button>
               </div>
               <div class="tours__item tours__item--egypt">
                 <h3 class="tours__item-country">Египет
                 </h3>
                 <p class="tours__item-price">от <span class="semibold">5900</span> грн</p>
-                <button type="button" data-country="Египет" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в Египет
+                <button type="button" data-country="Египет" data-id="booking" data-type="defined-type" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в Египет
                 </button>
               </div>
               <div class="tours__item tours__item--turkey">
                 <h3 class="tours__item-country">Турция
                 </h3>
                 <p class="tours__item-price">от <span class="semibold">5900</span> грн</p>
-                <button type="button" data-country="Турция" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в Турцию
+                <button type="button" data-country="Турция" data-id="booking" data-type="defined-type" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в Турцию
                 </button>
               </div>
               <div class="tours__item tours__item--greece">
                 <h3 class="tours__item-country">Греция
                 </h3>
                 <p class="tours__item-price">от <span class="semibold">5900</span> грн</p>
-                <button type="button" data-country="Греция" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в Грецию
+                <button type="button" data-country="Греция" data-id="booking" data-type="defined-type" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в Грецию
                 </button>
               </div>
               <div class="tours__item tours__item--uae">
                 <h3 class="tours__item-country">ОАЭ
                 </h3>
                 <p class="tours__item-price">от <span class="semibold">5900</span> грн</p>
-                <button type="button" data-country="ОАЭ" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в ОАЭ
+                <button type="button" data-country="ОАЭ" data-id="booking" data-type="defined-type" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в ОАЭ
                 </button>
               </div>
               <div class="tours__item tours__item--goa">
                 <h3 class="tours__item-country">ГОА
                 </h3>
                 <p class="tours__item-price">от <span class="semibold">5900</span> грн</p>
-                <button type="button" data-country="ГОА" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>на ГОА
+                <button type="button" data-country="ГОА" data-id="booking" data-type="defined-type" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>на ГОА
                 </button>
               </div>
               <div class="tours__item tours__item--cyprus">
                 <h3 class="tours__item-country">Кипр
                 </h3>
                 <p class="tours__item-price">от <span class="semibold">5900</span> грн</p>
-                <button type="button" data-country="Кипр" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>на Кипр
+                <button type="button" data-country="Кипр" data-id="booking" data-type="defined-type" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>на Кипр
                 </button>
               </div>
               <div class="tours__item tours__item--sri_lanka">
                 <h3 class="tours__item-country">Шри-Ланка
                 </h3>
                 <p class="tours__item-price">от <span class="semibold">5900</span> грн</p>
-                <button type="button" data-country="Шри-Ланка" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>на Шри-Ланку
+                <button type="button" data-country="Шри-Ланка" data-id="booking" data-type="defined-type" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>на Шри-Ланку
                 </button>
               </div>
               <div class="tours__item tours__item--albania">
                 <h3 class="tours__item-country">Албания
                 </h3>
                 <p class="tours__item-price">от <span class="semibold">4571</span> грн</p>
-                <button type="button" data-country="Албания" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в Албанию
+                <button type="button" data-country="Албания" data-id="booking" data-type="defined-type" class="tours__item-button"><span class="tours__item-button-txt">Подобрать тур </span><span class="tours__item-button-txt tours__item-button-txt--mob">Туры </span>в Албанию
                 </button>
               </div>
         </div>
@@ -110,7 +111,7 @@
             </h2>
             <p class="best-price__text">Мы сделаем все за вас: сравним, проверим и найдем самые вкусные предложения по горячей цене!
             </p>
-            <button type="button" data-id="booking" class="best-price__button best-price__button--data.button">Хочу лучшую цену
+            <button type="button" data-id="booking" , data-type="undefined-type" class="best-price__button best-price__button--data.button">Хочу лучшую цену
             </button>
           </div><img src="images/photo/girl.png" srcset="images/photo/girl@2x.png 2x" class="best-price__img">
         </div>
@@ -201,8 +202,8 @@
           </div>
         </div>
         <div class="main-steps__buttons">
-          <button type="button" data-id="booking" class="main-steps__button main-steps__button--defined">Я уже знаю куда еду</button>
-          <button type="button" data-id="booking" class="main-steps__button main-steps__button--undefined">Предложите нам варианты</button>
+          <button type="button" data-id="booking" data-type="defined-type" class="main-steps__button main-steps__button--defined">Я уже знаю куда еду</button>
+          <button type="button" data-id="booking" data-type="undefined-type" class="main-steps__button main-steps__button--undefined">Предложите нам варианты</button>
         </div>
       </div>
     </div>
@@ -256,7 +257,7 @@
             </h2>
             <p class="budget-price__text">Мы занимаемся путешествиями 6 лет, знаем, как вписаться в бюджет и классно отдохнуть. Обращайтесь — поделимся секретами!
             </p>
-            <button type="button" data-id="booking" class="budget-price__button budget-price__button--data.button">Подобрать выгодный тур
+            <button type="button" data-id="booking" , data-type="undefined-type" class="budget-price__button budget-price__button--data.button">Подобрать выгодный тур
             </button>
           </div>
         </div>
@@ -342,12 +343,12 @@
         <form action="" method="POST" class="popup__form">
           <div class="popup__form-switcher">
             <div class="popup__form-switcher-item">
-              <input type="radio" id="defined" name="type" checked class="popup__form-switcher-radio">
-              <label for="defined" class="popup__form-switcher-label popup__form-switcher-label--defined">Подберите мне тур</label>
+              <input type="radio" id="undefined-type" name="type" checked class="popup__form-switcher-radio">
+              <label for="undefined-type" class="popup__form-switcher-label popup__form-switcher-label--defined">Подберите мне тур</label>
             </div>
             <div class="popup__form-switcher-item">
-              <input type="radio" id="undefined" name="type" class="popup__form-switcher-radio">
-              <label for="undefined" class="popup__form-switcher-label popup__form-switcher-label--undefined">Я точно знаю, куда хочу</label>
+              <input type="radio" id="defined-type" name="type" class="popup__form-switcher-radio">
+              <label for="defined-type" class="popup__form-switcher-label popup__form-switcher-label--undefined">Я точно знаю, куда хочу</label>
             </div>
           </div>
           <div class="popup__form-slides">
@@ -356,13 +357,13 @@
                 <input type="text" placeholder="Как вас зовут?" minlength="3" required class="popup__form-input">
                 <input type="email" placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required class="popup__form-input">
                 <input type="tel" placeholder="Контактный телефон" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required class="popup__form-input">
-                <input type="text" placeholder="Желаемое направление" minlength="3" required class="popup__form-input">
+                <input type="text" name="country" placeholder="Желаемое направление" minlength="3" required class="popup__form-input">
               </div>
               <div class="popup__form-wrapper popup__form-wrapper--full">
                 <input type="text" placeholder="Как вас зовут?" minlength="3" required class="popup__form-input popup__form-input--half">
                 <input type="email" placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required class="popup__form-input popup__form-input--half">
                 <input type="tel" placeholder="Контактный телефон" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required class="popup__form-input popup__form-input--half">
-                <input type="text" placeholder="Желаемое направление" minlength="3" required class="popup__form-input popup__form-input--half">
+                <input type="text" name="country" placeholder="Желаемое направление" minlength="3" required class="popup__form-input popup__form-input--half">
                 <input type="text" placeholder="Отель" minlength="3" required class="popup__form-input popup__form-input--half">
                 <input type="date" placeholder="Даты вылета" required class="popup__form-input popup__form-input--half">
                 <input type="number" placeholder="Количество ночей" min="0" required class="popup__form-input popup__form-input--half">
@@ -371,7 +372,7 @@
             </div>
           </div>
           <textarea placeholder="Комментарий" class="popup__form-input popup__form-input--textarea"></textarea>
-          <button type="button" data-id="thank-you" class="popup__form-btn">Отправить запрос на подбор тура</button>
+          <button type="button" data-id="thank-you" class="popup__form-btn">Отправить запрос<span class="popup__form-btn-lg"> на подбор тура</span></button>
         </form>
       </div>
     </div>

@@ -56,6 +56,10 @@
   @include transition(all 0.25s)
   background: #fdfdfe
   font-size 16px
+
+  +respond-to($xsmall)
+    font-size 14px
+
   .form__fieldset-input-wrapper--offers-score &
     font-weight 500
     color #293033
@@ -124,6 +128,9 @@
     transition: .25s
     border-bottom: 1px solid #c0c4d1
     background: #ffffff
+
+    +respond-to($xsmall)
+      font-size 14px
     .footer &
       background: #f3f8fa
     &:last-child

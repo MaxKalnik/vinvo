@@ -58,13 +58,15 @@ function makeSelectCustom(element) {
     }
 
     $styledSelect.attr('tabindex', 0);
-    $styledSelect.click(function(e) {
+    $($styledSelect).swipe({
+      tap: function(event, target) {
         e.stopPropagation();
         $('div.select-styled.active').not(this).each(function(){
             $(this).removeClass('active').next('ul.select-options').hide();
         });
         $(this).toggleClass('active').next('ul.select-options').toggle();
         $(this).parents('.select').toggleClass('select--active');
+      }
     });
 
     $styledSelect.keydown(function(e){
@@ -104,7 +106,8 @@ function makeSelectCustom(element) {
     }
     hoverHander();
 
-    $listItems.click(function(e) {
+    $($listItems).swipe({
+      tap: function(event, target) {
         $listItems.show();
         e.stopPropagation();
         $styledSelect.text($(this).text()).removeClass('active');
@@ -114,6 +117,7 @@ function makeSelectCustom(element) {
         $(this).parents('.select').removeClass('select--active');
         $('.select').removeClass('select--first-hover');
         hoverHander();
+      }
     });
 
     $listItems.keydown(function(e){
@@ -130,10 +134,12 @@ function makeSelectCustom(element) {
       }
     });
 
-    $(document).click(function() {
+    $(document).swipe({
+      tap: function(event, target) {
         $styledSelect.removeClass('active');
         $list.hide();
         $('.select').removeClass('select--active');
+      }
     });
     $(document).keydown(function(e) {
       if(e.which === ESC_KEYCODE) {
@@ -241,15 +247,27 @@ if($('.testimonials__slides-list').length) {
   $(window).resize(throttle(initVars, 500, {leading: false}))
 }
 
+$(".testimonials__slides-list-wrapper").swipe( {
+  swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
+    next();
+  },
+
+  swipeRight:function(event, direction, distance, duration, fingerCount, fingerData) {
+    prev();
+  },
+   allowPageScroll: "vertical",
+   threshold: 35
+});
+
 var currentForm;
 
 function send(data, onSuccess, onError) {
   var xhr = new XMLHttpRequest();
   xhr.responseType = 'json';
-
+  currentForm = data;
   xhr.addEventListener('load', function () {
     if (xhr.status === 200) {
-      currentForm = data;
+      return;
     } else {
       console.log('Ошибка ' + xhr.status);
     }
@@ -268,30 +286,63 @@ function dialogCommonHandler($activateEl) {
   var $popupClose = $popup.find('.popup__close-btn');
   var $popupBtn = $popup.find('.popup__submit-btn');
   var $form = $activateEl.parents('form');
+  var tel = $form.find('input[type="tel"]').val();
 
-  $($activateEl).click(function() {
-    $('.popup').hide();
-    $popup.show();
-    if($form.length > 0) {
-      send(new FormData($form));
+  $($activateEl).swipe({
+    tap: function(event, target) {
+      $('.popup').hide();
+      $popup.show();
+      if($form.length > 0) {
+        send(new FormData($form));
+      }
+      if(currentForm && $form.find('input[type="tel"]').val()) {
+        $popup.find('input[type="tel"]').val($form.find('input[type="tel"]').val());
+      }
+      if($(this).data('country')) {
+        $popup.find('input[name="country"]').val($(this).data('country'));
+      }
+      if($(this).data('type')) {
+        var type = $(this).data('type');
+        var $wrapper = $popup.find('.popup__wrapper');
+        type === "undefined-type"? $wrapper.removeClass('popup__wrapper--full') : $wrapper.addClass('popup__wrapper--full')
+        $popup.find("#" + type).prop('checked', true);
+      }
     }
   });
 
   $($activateEl).keydown(function(e) {
     if(e.which === ENTER_KEYCODE) {
+      $('.popup').hide();
       $popup.show();
+      if($form.length > 0) {
+        send(new FormData($form));
+      }
+      if(currentForm && $form.find('input[type="tel"]').val()) {
+        $popup.find('input[type="tel"]').val($form.find('input[type="tel"]').val());
+      }
+      if($(this).data('country')) {
+        $popup.find('input[name="country"]').val($(this).data('country'));
+      }
+      if($(this).data('type')) {
+        var type = $(this).data('type');
+        var $wrapper = $popup.find('.popup__wrapper');
+        type === "undefined-type"? $wrapper.removeClass('popup__wrapper--full') : $wrapper.addClass('popup__wrapper--full')
+        $popup.find("#" + type).prop('checked', true);
+      }
     }
   });
 
   $($popupClose).swipe({
     tap: function(event, target) {
       $popup.hide();
+      $popup.find('input[name="country"]').val(undefined);
     }
   });
 
   $(document).keydown(function(e){
     if(e.which === ESC_KEYCODE) {
       $popup.hide();
+      $popup.find('input[name="country"]').val(undefined);
     }
   });
 
@@ -299,11 +350,13 @@ function dialogCommonHandler($activateEl) {
     tap: function(event, target) {
       event.preventDefault();
       $popup.hide();
+      $popup.find('input[name="country"]').val(undefined);
     }
   });
   $popupBtn.keydown(function(e){
     if(e.which === ENTER_KEYCODE) {
       $popup.hide();
+      $popup.find('input[name="country"]').val(undefined);
     }
   });
 }
@@ -317,6 +370,7 @@ dialogCommonHandler($('.main-steps__button--defined'));
 dialogCommonHandler($('.main-steps__button--undefined'));
 dialogCommonHandler($('.contacts__callback-button'));
 dialogCommonHandler($('.info__proposals-form-btn'));
+dialogCommonHandler($('.tours__item-button'));
 
 $('.footer__tel-toggle').swipe({
   tap: function(event, target) {
@@ -343,16 +397,27 @@ $(document).mouseup(function(e) {
     }
 });
 
-$('.popup__form-switcher-label--defined').swipe({
-  tap: function(event, target) {
-    $(this).parents('.popup__wrapper').removeClass('popup__wrapper--full');
-  }
-});
-
 $('.popup__form-switcher-label--undefined').swipe({
   tap: function(event, target) {
     $(this).parents('.popup__wrapper').addClass('popup__wrapper--full');
   }
 });
 
+$('.popup__form-switcher-label--defined').swipe({
+  tap: function(event, target) {
+    $(this).parents('.popup__wrapper').removeClass('popup__wrapper--full');
+  }
+});
+
+$('.header__user-block-toggle').swipe({
+  tap: function(event, target) {
+    $(this).parents('.header__user-block-wrapper').addClass('header__user-block-wrapper--active');
+  }
+});
+
+$('.header__user-block-close').swipe({
+  tap: function(event, target) {
+    $(this).parents('.header__user-block-wrapper').removeClass('header__user-block-wrapper--active');
+  }
+});
 

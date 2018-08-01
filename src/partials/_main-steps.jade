@@ -51,8 +51,8 @@ include ./svg-mixins
           | Перед поездкой заранее напомним вам о датах  и проиструктируем о деталях путешествия.
 
     .main-steps__buttons
-      button.main-steps__button.main-steps__button--defined(type="button", data-id="booking")
+      button.main-steps__button.main-steps__button--defined(type="button", data-id="booking", data-type="defined-type")
         | Я уже знаю куда еду
 
-      button.main-steps__button.main-steps__button--undefined(type="button", data-id="booking")
+      button.main-steps__button.main-steps__button--undefined(type="button", data-id="booking", data-type="undefined-type")
         | Предложите нам варианты

@@ -65,13 +65,67 @@
   justify-content space-between
   align-items center
 
-.header__user-block-wrapper
-  position relative
-
 .header__user-block-wrapper--active
   .header__user-block
     +respond-to($xsmall)
       display block
+      width calc(100% - 32px)
+      left 50%
+      top 0
+      transform translate(-50%)
+      background gray
+      padding 16px
+      padding-top 24px
+      border-radius 0 0 6px 6px
+
+  .header__tel-numbers
+    +respond-to($xsmall)
+      margin-bottom 24px
+
+  .header__tel-other
+    +respond-to($xsmall)
+      position static
+
+  .header__user-block-toggle
+    display none
+
+  .header__user-block-close
+    display block
+    position absolute
+    width 16px
+    height 16px
+    right 12px
+    top 12px
+
+    &:before
+      position: absolute
+      left: 0
+      top: 7px
+      content: ''
+      height: 2px
+      width: 18px
+      background: #fff
+      transform: rotate(45deg)
+      box-shadow: none
+      transition: transform .25s
+      opacity: 1
+
+    &:after
+      position: absolute
+      left: 0
+      top: 7px
+      content: ''
+      height: 2px
+      width: 18px
+      background: #fff
+      transform: rotate(-45deg)
+      box-shadow: none
+      transition: transform .25s
+
+.header__user-block-close
+  display none
+  +respond-to($xsmall)
+    display block
 
 .header__user-block
   display flex
@@ -79,6 +133,7 @@
   align-items center
 
   +respond-to($xsmall)
+    position absolute
     display none
 
 .header__tel-numbers
@@ -86,7 +141,10 @@
   margin-right 48px
 
   +respond-to($small)
-    margin-right 48px
+    margin-right 12px
+
+  +respond-to($xsmall)
+    overflow hidden
 
 .header__tel-btn
   position relative
@@ -130,11 +188,15 @@
   position absolute
   opacity 0
   transition .25s
+  max-height 0
+
+  +respond-to($xsmall)
+    display flex
 
   .header__tel-btn
-    margin-bottom 24px
+    margin-bottom 18px
     &:first-child
-      margin-top 24px
+      margin-top 16px
 
     &:last-child
       margin-bottom 0
@@ -143,6 +205,9 @@
   .header__tel-other
     display flex
     opacity 1
+
+    +respond-to($xsmall)
+      max-height 999px
 
   .header__tel-toggle
     transform scale(-1)

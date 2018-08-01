@@ -60,12 +60,18 @@
   flex-direction column
   position absolute
   top: 0
-  transform: translateY(-115%)
+  transform: translate(-16px, -115%)
   opacity 0
   transition .25s
+  background: rgba(23,25,26, 0.95)
+  // padding-right: 27px
+  padding-left 16px
+  border-radius: 3px 3px 0 0
+  width: calc(100% + 16px)
+  box-sizing border-box
 
   +respond-to($xsmall)
-    transform: translateY(-110%)
+    transform: translate(-16px, -113%)
 
   .footer__tel
     margin-bottom 24px
