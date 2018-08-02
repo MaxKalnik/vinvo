@@ -58,15 +58,13 @@ function makeSelectCustom(element) {
     }
 
     $styledSelect.attr('tabindex', 0);
-    $($styledSelect).swipe({
-      tap: function(event, target) {
+    $styledSelect.click(function(e) {
         e.stopPropagation();
         $('div.select-styled.active').not(this).each(function(){
             $(this).removeClass('active').next('ul.select-options').hide();
         });
         $(this).toggleClass('active').next('ul.select-options').toggle();
         $(this).parents('.select').toggleClass('select--active');
-      }
     });
 
     $styledSelect.keydown(function(e){
@@ -134,12 +132,10 @@ function makeSelectCustom(element) {
       }
     });
 
-    $(document).swipe({
-      tap: function(event, target) {
+    $(document).click(function() {
         $styledSelect.removeClass('active');
         $list.hide();
         $('.select').removeClass('select--active');
-      }
     });
     $(document).keydown(function(e) {
       if(e.which === ESC_KEYCODE) {
