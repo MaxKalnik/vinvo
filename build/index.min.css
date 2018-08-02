@@ -224,6 +224,7 @@ input {
   -webkit-appearance: none !important;
 }
 button {
+  font-family: 'Fira Sans';
   outline: none;
   border: none;
   background: none;
@@ -232,6 +233,9 @@ button {
   margin: 0;
   -webkit-appearance: none !important;
   cursor: pointer;
+}
+textarea {
+  font-family: 'Fira Sans';
 }
 .container,
 .header__wrapper,
