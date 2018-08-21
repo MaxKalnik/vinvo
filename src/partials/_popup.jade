@@ -38,9 +38,6 @@
     .popup__title
       | Забронировать тур
 
-    .popup__text
-      | Наши менеджеры на связи 24/7 и всегда помогут вам быстро и качественно забронировать тур.
-
     form.popup__form(action="", method="POST")
       .popup__form-switcher
         .popup__form-switcher-item
@@ -68,10 +65,10 @@
             input.popup__form-input.popup__form-input--half(type="tel", placeholder="Контактный телефон", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}", required)
             input.popup__form-input.popup__form-input--half(type="text", name="country" placeholder="Желаемое направление", minlength=3, required)
 
-            input.popup__form-input.popup__form-input--half(type="text", placeholder="Отель", minlength=3, required)
-            input.popup__form-input.popup__form-input--half(type="text", placeholder="Даты вылета", required)
-            input.popup__form-input.popup__form-input--half(type="number", placeholder="Количество ночей", min=0, required)
-            input.popup__form-input.popup__form-input--half(type="number", placeholder="Количество туристов", min=0, required)
+            input.popup__form-input.popup__form-input--half(type="text", placeholder="Отель", minlength=3)
+            input.popup__form-input.popup__form-input--half(type="text", placeholder="Даты вылета")
+            input.popup__form-input.popup__form-input--half(type="number", placeholder="Количество ночей", min=0)
+            input.popup__form-input.popup__form-input--half(type="number", placeholder="Количество туристов", min=0)
 
       textarea.popup__form-input.popup__form-input--textarea(placeholder="Комментарий")
 

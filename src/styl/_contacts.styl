@@ -113,6 +113,12 @@
   @extend .button
   margin-left auto
   padding 19px 32px
+  &:after
+    content 'Заказать обратный звонок'
+    padding 19px 32px
+
+  &:hover
+    background: linear-gradient(23.59deg, #632774 7.28%, #CB4272 92.72%, #CB4272 92.72%)
 
   +respond-to($medium)
     margin-top 32px
@@ -131,6 +137,9 @@
 
 .contacts__map-block
   width 547px
+
+  +respond-from($large)
+    width 49%
 
   +respond-to($medium)
     width 49%

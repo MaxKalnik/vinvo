@@ -12,20 +12,20 @@ include ./svg-mixins
           button.header__user-block-close(type="button")
           .header__tel-numbers
 
-            a.header__tel-btn(href="tel:+380443320258")
+            a.header__tel-btn.header__tel-btn--main(href="tel:+380443320258")
               | +38 (044) 332-02-58
 
             button.header__tel-toggle(type="button")
 
             .header__tel-other
-              a.header__tel-btn(href="tel:+380443320258")
-                | +38 (044) 332-02-58
+              a.header__tel-btn.header__tel-btn--ky(href="tel:+380965993523")
+                | +38 (096) 599-35-23
 
-              a.header__tel-btn(href="tel:+380443320258")
-                | +38 (044) 332-02-58
+              a.header__tel-btn.header__tel-btn--vo(href="tel:+380956100750")
+                | +38 (095) 610-07-50
 
-              a.header__tel-btn(href="tel:+380443320258")
-                | +38 (044) 332-02-58
+              a.header__tel-btn.header__tel-btn--lc(href="tel:+380630756705")
+                | +38 (063) 075-67-05
 
           button.header__callback-btn(type="button", data-id="callback")
             | Перезвоните мне
@@ -38,7 +38,7 @@ include ./svg-mixins
         | Хватит работать, вы заслужили отдых — оставьте заявку прямо сейчас  и получите тур по горячей цене!
 
       form.header__callback-form(action="", method="POST")
-        input.header__callback-form-tel(type="tel", name="tel", placeholder="+380(__)___-__-__", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}" required)
+        input.header__callback-form-tel(type="tel", name="tel", placeholder="+38(__)___-__-__", pattern="[\+]\d{3}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}" required)
         button.header__callback-form-btn(type="button", data-id="booking", data-type="undefined-type")
           | Подобрать тур
 

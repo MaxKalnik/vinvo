@@ -88,9 +88,15 @@
     margin-bottom 97px
     width 363px
 
+    +respond-from($large)
+      margin-left 612px
+
   &:nth-child(3)
     margin-left 210px
     width 379px
+
+    +respond-from($large)
+      margin-left 350px
 
   &:nth-child(4)
     margin-left auto
@@ -232,6 +238,13 @@
   @extend .button
   padding 23px
   width 300px
+  &:after
+    content 'Предложите нам варианты'
+    padding 23px
+
+  &:hover
+    background: linear-gradient(23.59deg, #632774 7.28%, #CB4272 92.72%, #CB4272 92.72%)
+
 
   +respond-to($small)
     width calc(50% - 16px)

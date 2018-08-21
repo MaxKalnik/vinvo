@@ -1,4 +1,5 @@
 .button
+  position relative
   display inline-block
   padding 22px 48px
   font-weight: 700
@@ -6,8 +7,34 @@
   font-size: 16px
   color #ffffff
   box-sizing border-box
+  background-color transparent
   background: linear-gradient(73.59deg, #632774 7.28%, #CB4272 92.72%, #CB4272 92.72%)
   border-radius: 6px
+  &:after
+    content 'Подобрать тур'
+    font-weight: 700
+    line-height: normal
+    font-size: 16px
+    color #ffffff
+    padding 22px 48px
+    box-sizing border-box
+    background: linear-gradient(-73.59deg, #632774 7.28%, #CB4272 92.72%, #CB4272 92.72%)
+    position absolute
+    left 0
+    top 0
+    width 100%
+    height 100%
+    opacity 0
+    transition .25s
+    border-radius: 6px
+
+  &:hover
+    background transparent
+    &:after
+      opacity 1
+
+  &:hover
+    background: linear-gradient(23.59deg, #632774 7.28%, #CB4272 92.72%, #CB4272 92.72%)
 
 .button-white
   display inline-block
