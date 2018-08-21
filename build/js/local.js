@@ -273,8 +273,6 @@ function send(data, onSuccess, onError) {
   xhr.send(data);
 }
 
-// make all popups by one class, maybe using coffeescript
-
 // popup
 function dialogCommonHandler($activateEl) {
   var popupId = $activateEl.data('id');
@@ -286,11 +284,13 @@ function dialogCommonHandler($activateEl) {
 
   $($activateEl).swipe({
     tap: function(event, target) {
-      $('.popup').hide();
-      $popup.show();
       if($form.length > 0) {
+        var a = $($form).find('input[required]');
+        console.log(a);
         send(new FormData($form));
       }
+      $('.popup').hide();
+      $popup.show();
       if(currentForm && $form.find('input[type="tel"]').val()) {
         $popup.find('input[type="tel"]').val($form.find('input[type="tel"]').val());
       }
@@ -300,7 +300,7 @@ function dialogCommonHandler($activateEl) {
       if($(this).data('type')) {
         var type = $(this).data('type');
         var $wrapper = $popup.find('.popup__wrapper');
-        type === "undefined-type"? $wrapper.removeClass('popup__wrapper--full') : $wrapper.addClass('popup__wrapper--full')
+        type === "undefined-type" ? $wrapper.removeClass('popup__wrapper--full') : $wrapper.addClass('popup__wrapper--full')
         $popup.find("#" + type).prop('checked', true);
       }
     }
@@ -322,7 +322,7 @@ function dialogCommonHandler($activateEl) {
       if($(this).data('type')) {
         var type = $(this).data('type');
         var $wrapper = $popup.find('.popup__wrapper');
-        type === "undefined-type"? $wrapper.removeClass('popup__wrapper--full') : $wrapper.addClass('popup__wrapper--full')
+        type === "undefined-type" ? $wrapper.removeClass('popup__wrapper--full') : $wrapper.addClass('popup__wrapper--full')
         $popup.find("#" + type).prop('checked', true);
       }
     }
@@ -344,7 +344,7 @@ function dialogCommonHandler($activateEl) {
 
   $($popupBtn).swipe({
     tap: function(event, target) {
-      event.preventDefault();
+      // event.preventDefault();
       $popup.hide();
       $popup.find('input[name="country"]').val(undefined);
     }
@@ -377,15 +377,16 @@ $('.footer__tel-toggle').swipe({
 $('.header__tel-toggle').swipe({
   tap: function(event, target) {
     $(this).parents('.header__tel-numbers').toggleClass('header__tel-numbers--active');
-    console.log('menu');
   }
 });
 
 $(document).mouseup(function(e) {
+  if($(document).width() > 768) {
     var container = $('.header__tel-numbers');
     if (!container.is(e.target) && container.has(e.target).length === 0) {
       container.removeClass('header__tel-numbers--active');
     }
+  }
 });
 $(document).mouseup(function(e) {
     var container = $('.footer__tel-numbers');
@@ -410,7 +411,6 @@ $('.header__user-block-toggle').swipe({
   tap: function(event, target) {
     $(this).parents('.header__user-block-wrapper').addClass('header__user-block-wrapper--active');
     $('.header__tel-numbers').addClass('header__tel-numbers--active');
-    console.log('header op');
   }
 });
 
@@ -418,7 +418,7 @@ $('.header__user-block-close').swipe({
   tap: function(event, target) {
     $(this).parents('.header__user-block-wrapper').removeClass('header__user-block-wrapper--active');
     $('.header__tel-numbers').removeClass('header__tel-numbers--active');
-    console.log('header cl');
   }
 });
 
+$('.header__callback-form-tel').mask('+38(000)-000-00-00');

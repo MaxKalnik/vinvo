@@ -137,13 +137,12 @@
   margin-right 48px
   display flex
   align-items center
-  padding 16px
-  padding-right 0
 
   +respond-to($small)
     margin-right 12px
 
   +respond-to($xsmall)
+    max-width 70%
     display block
     overflow hidden
     padding 0
@@ -214,15 +213,11 @@
     display flex
     position static
 
-  .header__tel-btn
-    margin-bottom 18px
-
     &:last-child
       margin-bottom 0
 
 .header__tel-numbers--active
   background #fff
-  padding 16px 0 16px 16px
   border-radius 6px 6px 0 0
   box-sizing border-box
 
@@ -234,18 +229,15 @@
   .header__tel-other
     display flex
     opacity 1
-    top 46px
+    top 56px
     max-height 999px
     background #fff
-    padding 16px
-    padding-right 37px
     border-radius 0 0 6px 6px
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1)
 
     +respond-to($xsmall)
       max-height 999px
       background transparent
-      padding 0
-      padding-right 0
       border-radius 0 0 6px 6px
 
   .header__tel-toggle
@@ -253,17 +245,72 @@
 
   .header__tel-btn
     color #505C69
+    padding-left 52px
+
+    +respond-to($xsmall)
+      padding-left 24px
+
+    &:before
+      content ''
+      width 24px
+      height 24px
+      position absolute
+      left 14px
+      top 16px
+
+      +respond-to($xsmall)
+        width 16px
+        height 16px
+        left 0
+        top 2px
+
+    &:after
+      content ''
+      bottom -1px
+      left 0
+      position absolute
+      width 100%
+      height 1px
+      background #C0C4D1
 
     +respond-to($xsmall)
       color #fff
+      border-bottom none
+      &:after
+        display none
 
   .header__tel-btn--main
+    padding-top 15px
+    padding-bottom 16px
+
+    +respond-to($xsmall)
+      padding-top 0
+      padding-bottom 0
+
+
     &:before
       background url(images/icons/whatsapp_color_logo.svg) center no-repeat
       background-size cover
 
+    &:after
+      width calc(100% + 36px)
+
+  .header__tel-btn--lc
+    padding-top 16px
+
+    &:after
+      display none
+
   .header__tel-btn:not(.header__tel-btn--main)
-    min-width 100%
+    padding-top 15px
+    padding-bottom 16px
+    padding-right 36px
+
+    +respond-to($xsmall)
+      padding-top 0
+      padding-bottom 0
+      padding-right 0
+      margin-top 16px
 
   .header__tel-btn--ky
     +respond-to($xsmall)

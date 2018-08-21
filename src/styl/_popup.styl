@@ -122,6 +122,18 @@ $formWidth-small = 100%;
     padding-left 16px
     padding-right 16px
 
+.popup__form-btn--callback
+  &:after
+    content 'Перезвоните мне'
+
+.popup__form-btn--req
+  &:after
+    content 'Отправить запрос на подбор тура'
+
+    +respond-to($xsmall)
+      &:after
+        content 'Отправить запрос'
+
 .popup--callback
   .popup__wrapper
     +respond-to($xsmall)

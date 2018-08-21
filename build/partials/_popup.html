@@ -14,7 +14,7 @@
         <option value="3">с 14:00 до 19:00</option>
         <option value="4">с 19:00 до 22:00</option>
       </select>
-      <button type="button" data-id="thank-you" class="popup__form-btn">Перезвоните мне</button>
+      <button type="button" data-id="thank-you" class="popup__form-btn popup__form-btn--callback">Перезвоните мне</button>
     </form>
   </div>
 </div>
@@ -39,13 +39,13 @@
             <input type="text" placeholder="Как вас зовут?" minlength="3" required="required" class="popup__form-input"/>
             <input type="email" placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required="required" class="popup__form-input"/>
             <input type="tel" placeholder="Контактный телефон" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required="required" class="popup__form-input"/>
-            <input type="text" name="country" placeholder="Желаемое направление" minlength="3" required="required" class="popup__form-input"/>
+            <input type="text" name="country" placeholder="Желаемое направление" minlength="3" class="popup__form-input"/>
           </div>
           <div class="popup__form-wrapper popup__form-wrapper--full">
             <input type="text" placeholder="Как вас зовут?" minlength="3" required="required" class="popup__form-input popup__form-input--half"/>
             <input type="email" placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required="required" class="popup__form-input popup__form-input--half"/>
             <input type="tel" placeholder="Контактный телефон" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required="required" class="popup__form-input popup__form-input--half"/>
-            <input type="text" name="country" placeholder="Желаемое направление" minlength="3" required="required" class="popup__form-input popup__form-input--half"/>
+            <input type="text" name="country" placeholder="Желаемое направление" minlength="3" class="popup__form-input popup__form-input--half"/>
             <input type="text" placeholder="Отель" minlength="3" class="popup__form-input popup__form-input--half"/>
             <input type="text" placeholder="Даты вылета" class="popup__form-input popup__form-input--half"/>
             <input type="number" placeholder="Количество ночей" min="0" class="popup__form-input popup__form-input--half"/>
@@ -54,7 +54,7 @@
         </div>
       </div>
       <textarea placeholder="Комментарий" class="popup__form-input popup__form-input--textarea"></textarea>
-      <button type="button" data-id="thank-you" class="popup__form-btn">Отправить запрос<span class="popup__form-btn-lg"> на подбор тура</span></button>
+      <button data-id="thank-you" class="popup__form-btn popup__form-btn--req">Отправить запрос<span class="popup__form-btn-lg"> на подбор тура</span></button>
     </form>
   </div>
 </div>

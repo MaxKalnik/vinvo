@@ -625,8 +625,6 @@ textarea {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  padding: 16px;
-  padding-right: 0;
 }
 @media only screen and (max-width: 1023px) {
   .header__tel-numbers {
@@ -635,6 +633,7 @@ textarea {
 }
 @media only screen and (max-width: 767px) {
   .header__tel-numbers {
+    max-width: 70%;
     display: block;
     overflow: hidden;
     padding: 0;
@@ -711,16 +710,12 @@ textarea {
     display: flex;
     position: static;
   }
-}
-.header__tel-other .header__tel-btn {
-  margin-bottom: 18px;
-}
-.header__tel-other .header__tel-btn:last-child {
-  margin-bottom: 0;
+  .header__tel-other:last-child {
+    margin-bottom: 0;
+  }
 }
 .header__tel-numbers--active {
   background: #fff;
-  padding: 16px 0 16px 16px;
   border-radius: 6px 6px 0 0;
   box-sizing: border-box;
 }
@@ -735,19 +730,16 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   opacity: 1;
-  top: 46px;
+  top: 56px;
   max-height: 999px;
   background: #fff;
-  padding: 16px;
-  padding-right: 37px;
   border-radius: 0 0 6px 6px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
 }
 @media only screen and (max-width: 767px) {
   .header__tel-numbers--active .header__tel-other {
     max-height: 999px;
     background: transparent;
-    padding: 0;
-    padding-right: 0;
     border-radius: 0 0 6px 6px;
   }
 }
@@ -756,18 +748,82 @@ textarea {
 }
 .header__tel-numbers--active .header__tel-btn {
   color: #505c69;
+  padding-left: 52px;
+}
+@media only screen and (max-width: 767px) {
+  .header__tel-numbers--active .header__tel-btn {
+    padding-left: 24px;
+  }
+}
+.header__tel-numbers--active .header__tel-btn:before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 14px;
+  top: 16px;
+}
+@media only screen and (max-width: 767px) {
+  .header__tel-numbers--active .header__tel-btn:before {
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 2px;
+  }
+}
+.header__tel-numbers--active .header__tel-btn:after {
+  content: '';
+  bottom: -1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #c0c4d1;
 }
 @media only screen and (max-width: 767px) {
   .header__tel-numbers--active .header__tel-btn {
     color: #fff;
+    border-bottom: none;
+  }
+  .header__tel-numbers--active .header__tel-btn:after {
+    display: none;
+  }
+}
+.header__tel-numbers--active .header__tel-btn--main {
+  padding-top: 15px;
+  padding-bottom: 16px;
+}
+@media only screen and (max-width: 767px) {
+  .header__tel-numbers--active .header__tel-btn--main {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 .header__tel-numbers--active .header__tel-btn--main:before {
   background: url("images/icons/whatsapp_color_logo.svg") center no-repeat;
   background-size: cover;
 }
+.header__tel-numbers--active .header__tel-btn--main:after {
+  width: calc(100% + 36px);
+}
+.header__tel-numbers--active .header__tel-btn--lc {
+  padding-top: 16px;
+}
+.header__tel-numbers--active .header__tel-btn--lc:after {
+  display: none;
+}
 .header__tel-numbers--active .header__tel-btn:not(.header__tel-btn--main) {
-  min-width: 100%;
+  padding-top: 15px;
+  padding-bottom: 16px;
+  padding-right: 36px;
+}
+@media only screen and (max-width: 767px) {
+  .header__tel-numbers--active .header__tel-btn:not(.header__tel-btn--main) {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    margin-top: 16px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .header__tel-numbers--active .header__tel-btn--ky {
@@ -2933,6 +2989,18 @@ textarea {
     top: 2px;
   }
 }
+.footer__tel--ky:before {
+  background: url("images/icons/ky_logo.svg") center no-repeat;
+  background-size: cover;
+}
+.footer__tel--vo:before {
+  background: url("images/icons/vo_logo.svg") center no-repeat;
+  background-size: cover;
+}
+.footer__tel--lc:before {
+  background: url("images/icons/lc_logo.svg") center no-repeat;
+  background-size: cover;
+}
 .footer__tel-toggle {
   width: 36px;
   height: 32px;
@@ -2987,6 +3055,10 @@ textarea {
 }
 .footer__tel-numbers--active .footer__tel-toggle {
   transform: scale(-1);
+}
+.footer__tel-numbers--active .footer__tel--main:before {
+  background: url("images/icons/whatsapp_color_logo.svg") center no-repeat;
+  background-size: cover;
 }
 .footer__under-text {
   opacity: 0.5;
@@ -3142,6 +3214,17 @@ svg {
   .popup__form-btn {
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+.popup__form-btn--callback:after {
+  content: 'Перезвоните мне';
+}
+.popup__form-btn--req:after {
+  content: 'Отправить запрос на подбор тура';
+}
+@media only screen and (max-width: 767px) {
+  .popup__form-btn--req:after:after {
+    content: 'Отправить запрос';
   }
 }
 @media only screen and (max-width: 767px) {
