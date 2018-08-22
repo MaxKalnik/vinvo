@@ -14,7 +14,7 @@ include ./svg-mixins
         form.info__proposals-form(action="", method="POST")
           input.info__proposals-form-input(type="text", placeholder="Как вас зовут?", minlength=3, required)
           input.info__proposals-form-input(type="email", placeholder="Ваш Email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
-          button.info__proposals-form-btn(type="button", data-id="thank-you")
+          button.info__proposals-form-btn(type="submit", data-sm="thank-you")
             | Сообщайте нам о скидках
 
         p.info__proposals-under-text

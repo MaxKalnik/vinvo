@@ -10,7 +10,7 @@
 
     form.popup__form(action="", method="POST")
       input.popup__form-input(type="text", placeholder="Как вас зовут?", minlength=3, required)
-      input.popup__form-input(type="tel", placeholder="Контактный телефон", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}", required)
+      input.popup__form-input(type="tel", placeholder="Контактный телефон", pattern="[\d{10}", required)
       select.popup__form-select(placeholder="Удобное время звонка")
         option(value=undefined)
           | Удобное время звонка
@@ -27,7 +27,7 @@
         option(value="4")
           | с 19:00 до 22:00
 
-      button.popup__form-btn.popup__form-btn--callback(type="button", data-id="thank-you")
+      button.popup__form-btn.popup__form-btn--callback(type="submit", data-sm="thank-you")
         | Перезвоните мне
 
 
@@ -56,13 +56,13 @@
           .popup__form-wrapper
             input.popup__form-input(type="text", placeholder="Как вас зовут?" minlength=3, required)
             input.popup__form-input(type="email", placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
-            input.popup__form-input(type="tel", placeholder="Контактный телефон", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}", required)
+            input.popup__form-input(type="tel", placeholder="Контактный телефон", pattern="[\d{10}", required)
             input.popup__form-input(type="text", name="country"  placeholder="Желаемое направление" minlength=3)
 
           .popup__form-wrapper.popup__form-wrapper--full
             input.popup__form-input.popup__form-input--half(type="text", placeholder="Как вас зовут?" minlength=3, required)
             input.popup__form-input.popup__form-input--half(type="email", placeholder="Ваш Email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
-            input.popup__form-input.popup__form-input--half(type="tel", placeholder="Контактный телефон", pattern="[\+]\d{2}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}", required)
+            input.popup__form-input.popup__form-input--half(type="tel", placeholder="Контактный телефон", pattern="[\d{10}", required)
             input.popup__form-input.popup__form-input--half(type="text", name="country" placeholder="Желаемое направление", minlength=3)
 
             input.popup__form-input.popup__form-input--half(type="text", placeholder="Отель", minlength=3)
@@ -72,7 +72,7 @@
 
       textarea.popup__form-input.popup__form-input--textarea(placeholder="Комментарий")
 
-      button.popup__form-btn.popup__form-btn--req(data-id="thank-you")
+      button.popup__form-btn.popup__form-btn--req(type="submit", data-sm="thank-you")
         | Отправить запрос
         span.popup__form-btn-lg
           |  на подбор тура

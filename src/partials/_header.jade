@@ -27,7 +27,7 @@ include ./svg-mixins
               a.header__tel-btn.header__tel-btn--lc(href="tel:+380630756705")
                 | +38 (063) 075-67-05
 
-          button.header__callback-btn(type="button", data-id="callback")
+          button.header__callback-btn(type="button")
             | Перезвоните мне
 
     .header__main
@@ -38,8 +38,8 @@ include ./svg-mixins
         | Хватит работать, вы заслужили отдых — оставьте заявку прямо сейчас  и получите тур по горячей цене!
 
       form.header__callback-form(action="", method="POST")
-        input.header__callback-form-tel(type="tel", name="tel", placeholder="+38(__)___-__-__", pattern="[\+]\d{3}[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}" required)
-        button.header__callback-form-btn(type="button", data-id="booking", data-type="undefined-type")
+        input.header__callback-form-tel(type="tel", name="tel", placeholder="+38(__)___-__-__", pattern="+[0-9]{2}([0-9]{3})[0-9]{3}-[0-9]d{2}-[0-9]{2}" required)
+        button.header__callback-form-btn(type="submit", data-sm="booking", data-type="undefined-type")
           | Подобрать тур
 
     .header__partners

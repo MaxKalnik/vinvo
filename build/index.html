@@ -19,7 +19,7 @@
                 <button type="button" class="header__tel-toggle"></button>
                 <div class="header__tel-other"><a href="tel:+380965993523" class="header__tel-btn header__tel-btn--ky">+38 (096) 599-35-23</a><a href="tel:+380956100750" class="header__tel-btn header__tel-btn--vo">+38 (095) 610-07-50</a><a href="tel:+380630756705" class="header__tel-btn header__tel-btn--lc">+38 (063) 075-67-05</a></div>
               </div>
-              <button type="button" data-id="callback" class="header__callback-btn">Перезвоните мне</button>
+              <button type="button" class="header__callback-btn">Перезвоните мне</button>
             </div>
           </div>
         </div>
@@ -27,8 +27,8 @@
           <h1 class="header__title">Кажется, Вам давно пора в отпуск</h1>
           <p class="header__main-text">Хватит работать, вы заслужили отдых — оставьте заявку прямо сейчас  и получите тур по горячей цене!</p>
           <form action="" method="POST" class="header__callback-form">
-            <input type="tel" name="tel" placeholder="+38(__)___-__-__" pattern="[+]d{3}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required class="header__callback-form-tel">
-            <button type="button" data-id="booking" data-type="undefined-type" class="header__callback-form-btn">Подобрать тур</button>
+            <input type="tel" name="tel" placeholder="+38(__)___-__-__" pattern="+[0-9]{2}([0-9]{3})[0-9]{3}-[0-9]d{2}-[0-9]{2}" required class="header__callback-form-tel">
+            <button type="submit" data-sm="booking" data-type="undefined-type" class="header__callback-form-btn">Подобрать тур</button>
           </form>
         </div>
         <div class="header__partners"><img src="images/logo/join_up.png" srcset="images/logo/join_up@2x.png 2x" class="header__partners-img"><img src="images/logo/anex_tour.png" srcset="images/logo/anex_tour@2x.png 2x" class="header__partners-img"><img src="images/logo/pegas.png" srcset="images/logo/pegas@2x.png 2x" class="header__partners-img"><img src="images/logo/coral_travel.png" srcset="images/logo/coral_travel@2x.png 2x" class="header__partners-img"><img src="images/logo/tez_tour.png" srcset="images/logo/tez_tour@2x.png 2x" class="header__partners-img"><img src="images/logo/mouzenidis.png" srcset="images/logo/mouzenidis@2x.png 2x" class="header__partners-img"></div>
@@ -125,7 +125,7 @@
             <form action="" method="POST" class="info__proposals-form">
               <input type="text" placeholder="Как вас зовут?" minlength="3" required class="info__proposals-form-input">
               <input type="email" placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required class="info__proposals-form-input">
-              <button type="button" data-id="thank-you" class="info__proposals-form-btn">Сообщайте нам о скидках</button>
+              <button type="submit" data-sm="thank-you" class="info__proposals-form-btn">Сообщайте нам о скидках</button>
             </form>
             <p class="info__proposals-under-text">Только полезные оповещения. Никакого спама и воды.</p>
           </div>
@@ -323,7 +323,7 @@
         <div class="popup__text">Мы на связи 24 часа, без выходных и праздников. Готовы ответить на ваши вопросы, обеспечить консультацию и забронировать тур в ближайшее время.</div>
         <form action="" method="POST" class="popup__form">
           <input type="text" placeholder="Как вас зовут?" minlength="3" required class="popup__form-input">
-          <input type="tel" placeholder="Контактный телефон" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required class="popup__form-input">
+          <input type="tel" placeholder="Контактный телефон" pattern="[d{10}" required class="popup__form-input">
           <select placeholder="Удобное время звонка" class="popup__form-select">
             <option>Удобное время звонка</option>
             <option value="1">В ближайшее время</option>
@@ -331,7 +331,7 @@
             <option value="3">с 14:00 до 19:00</option>
             <option value="4">с 19:00 до 22:00</option>
           </select>
-          <button type="button" data-id="thank-you" class="popup__form-btn popup__form-btn--callback">Перезвоните мне</button>
+          <button type="submit" data-sm="thank-you" class="popup__form-btn popup__form-btn--callback">Перезвоните мне</button>
         </form>
       </div>
     </div>
@@ -355,13 +355,13 @@
               <div class="popup__form-wrapper">
                 <input type="text" placeholder="Как вас зовут?" minlength="3" required class="popup__form-input">
                 <input type="email" placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required class="popup__form-input">
-                <input type="tel" placeholder="Контактный телефон" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required class="popup__form-input">
+                <input type="tel" placeholder="Контактный телефон" pattern="[d{10}" required class="popup__form-input">
                 <input type="text" name="country" placeholder="Желаемое направление" minlength="3" class="popup__form-input">
               </div>
               <div class="popup__form-wrapper popup__form-wrapper--full">
                 <input type="text" placeholder="Как вас зовут?" minlength="3" required class="popup__form-input popup__form-input--half">
                 <input type="email" placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required class="popup__form-input popup__form-input--half">
-                <input type="tel" placeholder="Контактный телефон" pattern="[+]d{2}[(]d{3}[)]d{3}[-]d{2}[-]d{2}" required class="popup__form-input popup__form-input--half">
+                <input type="tel" placeholder="Контактный телефон" pattern="[d{10}" required class="popup__form-input popup__form-input--half">
                 <input type="text" name="country" placeholder="Желаемое направление" minlength="3" class="popup__form-input popup__form-input--half">
                 <input type="text" placeholder="Отель" minlength="3" class="popup__form-input popup__form-input--half">
                 <input type="text" placeholder="Даты вылета" class="popup__form-input popup__form-input--half">
@@ -371,7 +371,7 @@
             </div>
           </div>
           <textarea placeholder="Комментарий" class="popup__form-input popup__form-input--textarea"></textarea>
-          <button data-id="thank-you" class="popup__form-btn popup__form-btn--req">Отправить запрос<span class="popup__form-btn-lg"> на подбор тура</span></button>
+          <button type="submit" data-sm="thank-you" class="popup__form-btn popup__form-btn--req">Отправить запрос<span class="popup__form-btn-lg"> на подбор тура</span></button>
         </form>
       </div>
     </div>

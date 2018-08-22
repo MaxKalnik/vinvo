@@ -285,11 +285,9 @@ function dialogCommonHandler($activateEl) {
   $($activateEl).swipe({
     tap: function(event, target) {
       if($form.length > 0) {
-        var a = $($form).find('input[required]');
-        console.log(a);
         send(new FormData($form));
       }
-      $('.popup').hide();
+      // $('.popup').hide();
       $popup.show();
       if(currentForm && $form.find('input[type="tel"]').val()) {
         $popup.find('input[type="tel"]').val($form.find('input[type="tel"]').val());
@@ -422,3 +420,8 @@ $('.header__user-block-close').swipe({
 });
 
 $('.header__callback-form-tel').mask('+38(000)-000-00-00');
+
+// $('form').on("submit", function (evt) {
+//   $("#thank-you").show();
+//   evt.preventDefault();
+// });
