@@ -10,15 +10,15 @@
             <button type="button" class="header__tel-toggle"></button>
             <div class="header__tel-other"><a href="tel:+380965993523" class="header__tel-btn header__tel-btn--ky">+38 (096) 599-35-23</a><a href="tel:+380956100750" class="header__tel-btn header__tel-btn--vo">+38 (095) 610-07-50</a><a href="tel:+380630756705" class="header__tel-btn header__tel-btn--lc">+38 (063) 075-67-05</a></div>
           </div>
-          <button type="button" class="header__callback-btn">Перезвоните мне</button>
+          <button type="button" data-id="callback" class="header__callback-btn">Перезвоните мне</button>
         </div>
       </div>
     </div>
     <div class="header__main">
       <h1 class="header__title">Кажется, Вам давно пора в отпуск</h1>
       <p class="header__main-text">Хватит работать, вы заслужили отдых — оставьте заявку прямо сейчас  и получите тур по горячей цене!</p>
-      <form action="" method="POST" class="header__callback-form">
-        <input type="tel" name="tel" placeholder="+38(__)___-__-__" pattern="+[0-9]{2}([0-9]{3})[0-9]{3}-[0-9]d{2}-[0-9]{2}" required="required" class="header__callback-form-tel"/>
+      <form action="https://formspree.io/kalnikmaxim@gmail.com" method="POST" name="header-callback" class="header__callback-form">
+        <input type="tel" placeholder="+38(__)___-__-__" name="phone" pattern="+[0-9]{2}([0-9]{3})[0-9]{3}-[0-9]d{2}-[0-9]{2}" required="required" class="header__callback-form-tel"/>
         <button type="submit" data-sm="booking" data-type="undefined-type" class="header__callback-form-btn">Подобрать тур</button>
       </form>
     </div>

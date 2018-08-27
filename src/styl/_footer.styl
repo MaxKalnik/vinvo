@@ -18,6 +18,7 @@
 
 .footer__tel
   position relative
+  display inline-block
   font-weight: 700
   line-height: normal
   font-size: 20px
@@ -62,6 +63,7 @@
 .footer__tel-toggle
   width 36px
   height 32px
+  transition .15s
   background url(images/icons/ic_expand_white.svg) center no-repeat
 
   +respond-to($xsmall)
@@ -76,7 +78,7 @@
   display none
   flex-direction column
   position absolute
-  top: 0
+  top: 29px
   transform: translate(-16px, -115%)
   opacity 0
   transition .25s
@@ -87,6 +89,7 @@
   width: calc(100% + 16px)
   box-sizing border-box
   left 0
+  transition .35s
 
   +respond-to($xsmall)
     transform: translate(-16px, -113%)
@@ -96,16 +99,13 @@
     &:first-child
       margin-top 24px
 
-    &:last-child
-      margin-bottom 0
-
-.footer__tel-numbers--active
+.footer__tel-numbers:hover
   .footer__tel-other
-    display flex
+    display block
     opacity 1
 
   .footer__tel-toggle
-    transform scale(-1)
+    transform rotateX(180deg)
 
   .footer__tel--main
     &:before

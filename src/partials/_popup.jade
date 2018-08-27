@@ -8,10 +8,10 @@
     .popup__text
       | Мы на связи 24 часа, без выходных и праздников. Готовы ответить на ваши вопросы, обеспечить консультацию и забронировать тур в ближайшее время.
 
-    form.popup__form(action="", method="POST")
-      input.popup__form-input(type="text", placeholder="Как вас зовут?", minlength=3, required)
-      input.popup__form-input(type="tel", placeholder="Контактный телефон", pattern="[\d{10}", required)
-      select.popup__form-select(placeholder="Удобное время звонка")
+    form.popup__form(action="", method="POST", name="callback")
+      input.popup__form-input(type="text", placeholder="Как вас зовут?", name="name" minlength=3, required)
+      input.popup__form-input(type="tel", name="phone" placeholder="Контактный телефон", required)
+      select.popup__form-select(placeholder="Удобное время звонка", name="call-time")
         option(value=undefined)
           | Удобное время звонка
 
@@ -38,44 +38,53 @@
     .popup__title
       | Забронировать тур
 
-    form.popup__form(action="", method="POST")
-      .popup__form-switcher
-        .popup__form-switcher-item
-          input.popup__form-switcher-radio(type="radio", id="undefined-type", name="type" checked)
-          label.popup__form-switcher-label.popup__form-switcher-label--defined(for="undefined-type")
-            | Подберите мне тур
+    .popup__form-switcher
+      .popup__form-switcher-item
+        input.popup__form-switcher-radio(type="radio", id="undefined-type", name="type" checked)
+        label.popup__form-switcher-label.popup__form-switcher-label--defined(for="undefined-type")
+          | Подберите мне тур
 
-        .popup__form-switcher-item
-          input.popup__form-switcher-radio(type="radio", id="defined-type", name="type")
-          label.popup__form-switcher-label.popup__form-switcher-label--undefined(for="defined-type")
-            | Я точно знаю, куда хочу
+      .popup__form-switcher-item
+        input.popup__form-switcher-radio(type="radio", id="defined-type", name="type")
+        label.popup__form-switcher-label.popup__form-switcher-label--undefined(for="defined-type")
+          | Я точно знаю, куда хочу
 
 
-      .popup__form-slides
-        .popup__form-slides-list
+    .popup__form-slides
+      .popup__form-slides-list
+        form.popup__form.popup__form--undefined(action="https://formspree.io/kalnikmaxim@gmail.com", method="POST", name
+        ="booking-undefined")
           .popup__form-wrapper
-            input.popup__form-input(type="text", placeholder="Как вас зовут?" minlength=3, required)
-            input.popup__form-input(type="email", placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
-            input.popup__form-input(type="tel", placeholder="Контактный телефон", pattern="[\d{10}", required)
+            input.popup__form-input(type="text", placeholder="Как вас зовут?" minlength=3, name="name", required)
+            input.popup__form-input(type="email", name="email" placeholder="Ваш Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
+            input.popup__form-input(type="tel", name="phone" placeholder="Контактный телефон", required)
             input.popup__form-input(type="text", name="country"  placeholder="Желаемое направление" minlength=3)
 
+          textarea.popup__form-input.popup__form-input--textarea(placeholder="Комментарий")
+
+          button.popup__form-btn.popup__form-btn--req(type="submit", data-sm="thank-you")
+            | Отправить запрос
+            span.popup__form-btn-lg
+              |  на подбор тура
+
+        form.popup__form.popup__form--defined(action="https://formspree.io/kalnikmaxim@gmail.com", method="POST", name="booking-defined")
           .popup__form-wrapper.popup__form-wrapper--full
-            input.popup__form-input.popup__form-input--half(type="text", placeholder="Как вас зовут?" minlength=3, required)
-            input.popup__form-input.popup__form-input--half(type="email", placeholder="Ваш Email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
-            input.popup__form-input.popup__form-input--half(type="tel", placeholder="Контактный телефон", pattern="[\d{10}", required)
-            input.popup__form-input.popup__form-input--half(type="text", name="country" placeholder="Желаемое направление", minlength=3)
+            input.popup__form-input.popup__form-input--half(type="text", name="name" placeholder="Как вас зовут?" minlength=3, required)
+            input.popup__form-input.popup__form-input--half(type="email", name="e-mail" placeholder="Ваш Email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
+            input.popup__form-input.popup__form-input--half(type="tel", name="phone" placeholder="Контактный телефон",  required)
+            input.popup__form-input.popup__form-input--half(type="text", name="country", placeholder="Желаемое направление", minlength=3)
 
-            input.popup__form-input.popup__form-input--half(type="text", placeholder="Отель", minlength=3)
-            input.popup__form-input.popup__form-input--half(type="text", placeholder="Даты вылета")
-            input.popup__form-input.popup__form-input--half(type="number", placeholder="Количество ночей", min=0)
-            input.popup__form-input.popup__form-input--half(type="number", placeholder="Количество туристов", min=0)
+            input.popup__form-input.popup__form-input--half(type="text", name="hotel" placeholder="Отель", minlength=3)
+            input.popup__form-input.popup__form-input--half(type="text", name="flight date", placeholder="Даты вылета")
+            input.popup__form-input.popup__form-input--half(type="number", name="nights", placeholder="Количество ночей", min=0)
+            input.popup__form-input.popup__form-input--half(type="number", name="people", placeholder="Количество туристов", min=0)
 
-      textarea.popup__form-input.popup__form-input--textarea(placeholder="Комментарий")
+          textarea.popup__form-input.popup__form-input--textarea(placeholder="Комментарий", name="comment")
 
-      button.popup__form-btn.popup__form-btn--req(type="submit", data-sm="thank-you")
-        | Отправить запрос
-        span.popup__form-btn-lg
-          |  на подбор тура
+          button.popup__form-btn.popup__form-btn--req(type="submit", data-sm="thank-you")
+            | Отправить запрос
+            span.popup__form-btn-lg
+              |  на подбор тура
 
 .popup.popup--thanks#thank-you
   .popup__wrapper

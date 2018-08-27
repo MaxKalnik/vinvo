@@ -66,6 +66,10 @@
   align-items center
 
 .header__user-block-wrapper--active
+  max-width 267px
+  +respond-to($xsmall)
+    max-width auto
+
   .header__user-block
     +respond-to($xsmall)
       display block
@@ -150,6 +154,7 @@
 
 .header__tel-btn
   position relative
+  display inline-block
   font-weight: 700
   line-height: normal
   font-size: 20px
@@ -192,20 +197,41 @@
     background-size cover
 
 .header__tel-toggle
+  position relative
   width 36px
   height 32px
-  background url(images/icons/ic_expand_white.svg) center no-repeat
+  transition .15s
+
+  &:before
+    content ''
+    position absolute
+    width 11px
+    height 2px
+    background #fff
+    transform rotate(-135deg)
+    left 10px
+    top 14px
+    border-radius 6px
+
+  &:after
+    content ''
+    position absolute
+    left 16px
+    top 14px
+    width 11px
+    height 2px
+    background #fff
+    transform rotate(135deg)
+    border-radius 6px
 
   +respond-to($xsmall)
     position relative
     top 10px
 
 .header__tel-other
-  display none
-  flex-direction column
+  display block
   position absolute
   opacity 0
-  transition .25s
   max-height 0
   left 0
 
@@ -216,7 +242,7 @@
     &:last-child
       margin-bottom 0
 
-.header__tel-numbers--active
+.header__tel-numbers:hover
   background #fff
   border-radius 6px 6px 0 0
   box-sizing border-box
@@ -227,7 +253,7 @@
     padding 0
 
   .header__tel-other
-    display flex
+    display block
     opacity 1
     top 56px
     max-height 999px
@@ -241,7 +267,10 @@
       border-radius 0 0 6px 6px
 
   .header__tel-toggle
-    background url(images/icons/expand_gray.svg) center no-repeat
+    transform rotateX(180deg)
+    &:after,
+    &:before
+      background-color #C0C4D1
 
   .header__tel-btn
     color #505C69
@@ -282,6 +311,9 @@
   .header__tel-btn--main
     padding-top 15px
     padding-bottom 16px
+    white-space nowrap
+    &:after
+      widht calc(100% - 1px)
 
     +respond-to($xsmall)
       padding-top 0
@@ -305,6 +337,7 @@
     padding-top 15px
     padding-bottom 16px
     padding-right 36px
+    white-space: nowrap
 
     +respond-to($xsmall)
       padding-top 0
@@ -315,11 +348,15 @@
   .header__tel-btn--ky
     +respond-to($xsmall)
       margin-top 16px
+      width auto
 
 .header__callback-btn
   @extend .button-white
   padding-top 18px
   padding-bottom 18px
+
+  &:hover
+    color #505C69
 
   +respond-to($small)
     padding 18px

@@ -420,6 +420,7 @@ $('.header__user-block-close').swipe({
 });
 
 $('.header__callback-form-tel').mask('+38(000)-000-00-00');
+$('input[type="tel"]').mask('+38(000)-000-00-00');
 
 // $('form').on("submit", function (evt) {
 //   $("#thank-you").show();

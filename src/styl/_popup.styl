@@ -188,6 +188,10 @@ $formWidth-small = 100%;
           background url(images/photo/order_tour@2x.png) center no-repeat
           background-size cover
 
+    .popup__form-wrapper--full
+      visibility hidden
+      transition 0s visibility .5s
+
   .popup__form
     &:after
       display none
@@ -203,7 +207,7 @@ $formWidth-small = 100%;
     display flex
     width $formWidth * 2
     transform translateX(0)
-    transition .35s ease-in
+    // transition .35s ease-in
 
     +respond-to($xsmall)
       width $formWidth-small
@@ -249,6 +253,14 @@ $formWidth-small = 100%;
       display none
 
   .popup__wrapper--full
+    .popup__form-wrapper:not(.popup__form-wrapper--full)
+      visibility hidden
+      transition 0s visibility .5s
+
+    .popup__form-wrapper--full
+      visibility visible
+      transition none
+
     +respond-to($xsmall)
       padding-bottom 16px
       &:after
@@ -267,6 +279,24 @@ $formWidth-small = 100%;
 
       +respond-to($xsmall)
         transform translateX(0)
+
+.popup__form--undefined
+  opacity 1
+  transition .35s ease-in
+
+.popup__form--defined
+  opacity 0
+  transition .35s ease-in
+
+  .popup__form-btn
+    margin-top 32px
+
+.popup__wrapper--full
+  .popup__form--undefined
+    opacity 0
+
+  .popup__form--defined
+    opacity 1
 
 .popup__form-switcher
   width 100%

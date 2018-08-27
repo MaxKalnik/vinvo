@@ -192,6 +192,13 @@ a{text-decoration: none}
   text-shadow: 1px 1px 10px rgba(0,0,0,0.1);
   border-radius: 4px;
 }
+.button-blue:hover,
+.main-steps__button--defined:hover {
+  background: #198cff;
+  border: 1px solid transparent;
+  color: #fff;
+  transition: 0.25s;
+}
 .input,
 .header__callback-form-tel,
 .info__proposals-form-input,
@@ -542,6 +549,14 @@ textarea {
   -ms-flex-align: center;
       align-items: center;
 }
+.header__user-block-wrapper--active {
+  max-width: 267px;
+}
+@media only screen and (max-width: 767px) {
+  .header__user-block-wrapper--active {
+    max-width: auto;
+  }
+}
 @media only screen and (max-width: 767px) {
   .header__user-block-wrapper--active .header__user-block {
     display: block;
@@ -642,6 +657,7 @@ textarea {
 }
 .header__tel-btn {
   position: relative;
+  display: inline-block;
   font-weight: 700;
   line-height: normal;
   font-size: 20px;
@@ -684,9 +700,32 @@ textarea {
   background-size: cover;
 }
 .header__tel-toggle {
+  position: relative;
   width: 36px;
   height: 32px;
-  background: url("images/icons/ic_expand_white.svg") center no-repeat;
+  transition: 0.15s;
+}
+.header__tel-toggle:before {
+  content: '';
+  position: absolute;
+  width: 11px;
+  height: 2px;
+  background: #fff;
+  transform: rotate(-135deg);
+  left: 10px;
+  top: 14px;
+  border-radius: 6px;
+}
+.header__tel-toggle:after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  width: 11px;
+  height: 2px;
+  background: #fff;
+  transform: rotate(135deg);
+  border-radius: 6px;
 }
 @media only screen and (max-width: 767px) {
   .header__tel-toggle {
@@ -695,12 +734,9 @@ textarea {
   }
 }
 .header__tel-other {
-  display: none;
-  -ms-flex-direction: column;
-      flex-direction: column;
+  display: block;
   position: absolute;
   opacity: 0;
-  transition: 0.25s;
   max-height: 0;
   left: 0;
 }
@@ -714,21 +750,20 @@ textarea {
     margin-bottom: 0;
   }
 }
-.header__tel-numbers--active {
+.header__tel-numbers:hover {
   background: #fff;
   border-radius: 6px 6px 0 0;
   box-sizing: border-box;
 }
 @media only screen and (max-width: 767px) {
-  .header__tel-numbers--active {
+  .header__tel-numbers:hover {
     background: transparent;
     border-radius: 0;
     padding: 0;
   }
 }
-.header__tel-numbers--active .header__tel-other {
-  display: -ms-flexbox;
-  display: flex;
+.header__tel-numbers:hover .header__tel-other {
+  display: block;
   opacity: 1;
   top: 56px;
   max-height: 999px;
@@ -737,25 +772,29 @@ textarea {
   box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
 }
 @media only screen and (max-width: 767px) {
-  .header__tel-numbers--active .header__tel-other {
+  .header__tel-numbers:hover .header__tel-other {
     max-height: 999px;
     background: transparent;
     border-radius: 0 0 6px 6px;
   }
 }
-.header__tel-numbers--active .header__tel-toggle {
-  background: url("images/icons/expand_gray.svg") center no-repeat;
+.header__tel-numbers:hover .header__tel-toggle {
+  transform: rotateX(180deg);
 }
-.header__tel-numbers--active .header__tel-btn {
+.header__tel-numbers:hover .header__tel-toggle:after,
+.header__tel-numbers:hover .header__tel-toggle:before {
+  background-color: #c0c4d1;
+}
+.header__tel-numbers:hover .header__tel-btn {
   color: #505c69;
   padding-left: 52px;
 }
 @media only screen and (max-width: 767px) {
-  .header__tel-numbers--active .header__tel-btn {
+  .header__tel-numbers:hover .header__tel-btn {
     padding-left: 24px;
   }
 }
-.header__tel-numbers--active .header__tel-btn:before {
+.header__tel-numbers:hover .header__tel-btn:before {
   content: '';
   width: 24px;
   height: 24px;
@@ -764,14 +803,14 @@ textarea {
   top: 16px;
 }
 @media only screen and (max-width: 767px) {
-  .header__tel-numbers--active .header__tel-btn:before {
+  .header__tel-numbers:hover .header__tel-btn:before {
     width: 16px;
     height: 16px;
     left: 0;
     top: 2px;
   }
 }
-.header__tel-numbers--active .header__tel-btn:after {
+.header__tel-numbers:hover .header__tel-btn:after {
   content: '';
   bottom: -1px;
   left: 0;
@@ -781,44 +820,49 @@ textarea {
   background: #c0c4d1;
 }
 @media only screen and (max-width: 767px) {
-  .header__tel-numbers--active .header__tel-btn {
+  .header__tel-numbers:hover .header__tel-btn {
     color: #fff;
     border-bottom: none;
   }
-  .header__tel-numbers--active .header__tel-btn:after {
+  .header__tel-numbers:hover .header__tel-btn:after {
     display: none;
   }
 }
-.header__tel-numbers--active .header__tel-btn--main {
+.header__tel-numbers:hover .header__tel-btn--main {
   padding-top: 15px;
   padding-bottom: 16px;
+  white-space: nowrap;
+}
+.header__tel-numbers:hover .header__tel-btn--main:after {
+  widht: calc(100% - 1px);
 }
 @media only screen and (max-width: 767px) {
-  .header__tel-numbers--active .header__tel-btn--main {
+  .header__tel-numbers:hover .header__tel-btn--main {
     padding-top: 0;
     padding-bottom: 0;
   }
 }
-.header__tel-numbers--active .header__tel-btn--main:before {
+.header__tel-numbers:hover .header__tel-btn--main:before {
   background: url("images/icons/whatsapp_color_logo.svg") center no-repeat;
   background-size: cover;
 }
-.header__tel-numbers--active .header__tel-btn--main:after {
+.header__tel-numbers:hover .header__tel-btn--main:after {
   width: calc(100% + 36px);
 }
-.header__tel-numbers--active .header__tel-btn--lc {
+.header__tel-numbers:hover .header__tel-btn--lc {
   padding-top: 16px;
 }
-.header__tel-numbers--active .header__tel-btn--lc:after {
+.header__tel-numbers:hover .header__tel-btn--lc:after {
   display: none;
 }
-.header__tel-numbers--active .header__tel-btn:not(.header__tel-btn--main) {
+.header__tel-numbers:hover .header__tel-btn:not(.header__tel-btn--main) {
   padding-top: 15px;
   padding-bottom: 16px;
   padding-right: 36px;
+  white-space: nowrap;
 }
 @media only screen and (max-width: 767px) {
-  .header__tel-numbers--active .header__tel-btn:not(.header__tel-btn--main) {
+  .header__tel-numbers:hover .header__tel-btn:not(.header__tel-btn--main) {
     padding-top: 0;
     padding-bottom: 0;
     padding-right: 0;
@@ -826,13 +870,17 @@ textarea {
   }
 }
 @media only screen and (max-width: 767px) {
-  .header__tel-numbers--active .header__tel-btn--ky {
+  .header__tel-numbers:hover .header__tel-btn--ky {
     margin-top: 16px;
+    width: auto;
   }
 }
 .header__callback-btn {
   padding-top: 18px;
   padding-bottom: 18px;
+}
+.header__callback-btn:hover {
+  color: #505c69;
 }
 @media only screen and (max-width: 1023px) {
   .header__callback-btn {
@@ -1560,6 +1608,9 @@ textarea {
 .tours__item-button {
   padding: 14px 16px;
   width: 100%;
+}
+.tours__item-button:hover {
+  color: #505c69;
 }
 @media only screen and (max-width: 1023px) {
   .tours__item-button {
@@ -2960,6 +3011,7 @@ textarea {
 }
 .footer__tel {
   position: relative;
+  display: inline-block;
   font-weight: 700;
   line-height: normal;
   font-size: 20px;
@@ -3004,6 +3056,7 @@ textarea {
 .footer__tel-toggle {
   width: 36px;
   height: 32px;
+  transition: 0.15s;
   background: url("images/icons/ic_expand_white.svg") center no-repeat;
 }
 @media only screen and (max-width: 767px) {
@@ -3023,7 +3076,7 @@ textarea {
   -ms-flex-direction: column;
       flex-direction: column;
   position: absolute;
-  top: 0;
+  top: 29px;
   transform: translate(-16px, -115%);
   opacity: 0;
   transition: 0.25s;
@@ -3033,6 +3086,7 @@ textarea {
   width: calc(100% + 16px);
   box-sizing: border-box;
   left: 0;
+  transition: 0.35s;
 }
 @media only screen and (max-width: 767px) {
   .footer__tel-other {
@@ -3045,18 +3099,14 @@ textarea {
 .footer__tel-other .footer__tel:first-child {
   margin-top: 24px;
 }
-.footer__tel-other .footer__tel:last-child {
-  margin-bottom: 0;
-}
-.footer__tel-numbers--active .footer__tel-other {
-  display: -ms-flexbox;
-  display: flex;
+.footer__tel-numbers:hover .footer__tel-other {
+  display: block;
   opacity: 1;
 }
-.footer__tel-numbers--active .footer__tel-toggle {
-  transform: scale(-1);
+.footer__tel-numbers:hover .footer__tel-toggle {
+  transform: rotateX(180deg);
 }
-.footer__tel-numbers--active .footer__tel--main:before {
+.footer__tel-numbers:hover .footer__tel--main:before {
   background: url("images/icons/whatsapp_color_logo.svg") center no-repeat;
   background-size: cover;
 }
@@ -3284,6 +3334,10 @@ svg {
     background-size: cover;
   }
 }
+.popup--order-prime .popup__wrapper .popup__form-wrapper--full {
+  visibility: hidden;
+  transition: 0s visibility 0.5s;
+}
 @media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 767px) and (min--moz-device-pixel-ratio: 2), only screen and (max-width: 767px) and (min-device-pixel-ratio: 2), only screen and (max-width: 767px) and (min-resolution: 192dpi), only screen and (max-width: 767px) and (min-resolution: 2dppx) {
   .popup--order-prime .popup__wrapper:after {
     background: url("images/photo/order_tour@2x.png") center no-repeat;
@@ -3307,7 +3361,6 @@ svg {
   display: flex;
   width: 1312px;
   transform: translateX(0);
-  transition: 0.35s ease-in;
 }
 @media only screen and (max-width: 767px) {
   .popup--order-prime .popup__form-slides-list {
@@ -3368,6 +3421,14 @@ svg {
     display: none;
   }
 }
+.popup--order-prime .popup__wrapper--full .popup__form-wrapper:not(.popup__form-wrapper--full) {
+  visibility: hidden;
+  transition: 0s visibility 0.5s;
+}
+.popup--order-prime .popup__wrapper--full .popup__form-wrapper--full {
+  visibility: visible;
+  transition: none;
+}
 @media only screen and (max-width: 767px) {
   .popup--order-prime .popup__wrapper--full {
     padding-bottom: 16px;
@@ -3393,6 +3454,23 @@ svg {
   .popup--order-prime .popup__wrapper--full .popup__form-slides-list {
     transform: translateX(0);
   }
+}
+.popup__form--undefined {
+  opacity: 1;
+  transition: 0.35s ease-in;
+}
+.popup__form--defined {
+  opacity: 0;
+  transition: 0.35s ease-in;
+}
+.popup__form--defined .popup__form-btn {
+  margin-top: 32px;
+}
+.popup__wrapper--full .popup__form--undefined {
+  opacity: 0;
+}
+.popup__wrapper--full .popup__form--defined {
+  opacity: 1;
 }
 .popup__form-switcher {
   width: 100%;
