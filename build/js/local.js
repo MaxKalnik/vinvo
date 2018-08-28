@@ -255,24 +255,6 @@ $(".testimonials__slides-list-item").swipe( {
    threshold: 25
 });
 
-var currentForm;
-
-function send(data, onSuccess, onError) {
-  var xhr = new XMLHttpRequest();
-  xhr.responseType = 'json';
-  currentForm = data;
-  xhr.addEventListener('load', function () {
-    if (xhr.status === 200) {
-      return;
-    } else {
-      console.log('Ошибка ' + xhr.status);
-    }
-  });
-
-  xhr.open('POST', URL.post);
-  xhr.send(data);
-}
-
 // popup
 function dialogCommonHandler($activateEl) {
   var popupId = $activateEl.data('id');
@@ -286,7 +268,7 @@ function dialogCommonHandler($activateEl) {
     tap: function(event, target) {
       $popup.show();
 
-      if(currentForm && $form.find('input[type="tel"]').val()) {
+      if($form.find('input[type="tel"]').val()) {
         $popup.find('input[type="tel"]').val($form.find('input[type="tel"]').val());
       }
       if($(this).data('country')) {
@@ -305,7 +287,7 @@ function dialogCommonHandler($activateEl) {
     if(e.which === ENTER_KEYCODE) {
       $popup.show();
 
-      if(currentForm && $form.find('input[type="tel"]').val()) {
+      if($form.find('input[type="tel"]').val()) {
         $popup.find('input[type="tel"]').val($form.find('input[type="tel"]').val());
       }
       if($(this).data('country')) {
@@ -336,7 +318,6 @@ function dialogCommonHandler($activateEl) {
 
   $($popupBtn).swipe({
     tap: function(event, target) {
-      // event.preventDefault();
       $popup.hide();
       $popup.find('input[name="country"]').val(undefined);
     }
