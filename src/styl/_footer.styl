@@ -78,12 +78,11 @@
   display none
   flex-direction column
   position absolute
-  top: 29px
+  top: 28px
   transform: translate(-16px, -115%)
   opacity 0
   transition .25s
   background: rgba(23,25,26, 0.95)
-  // padding-right: 27px
   padding-left 16px
   border-radius: 3px 3px 0 0
   width: calc(100% + 16px)
@@ -100,6 +99,20 @@
       margin-top 24px
 
 .footer__tel-numbers:hover
+  +respond-from($small)
+    .footer__tel-other
+      display block
+      opacity 1
+
+    .footer__tel-toggle
+      transform rotateX(180deg)
+
+    .footer__tel--main
+      &:before
+        background url(images/icons/whatsapp_color_logo.svg) center no-repeat
+        background-size cover
+
+.footer__tel-numbers--active
   .footer__tel-other
     display block
     opacity 1

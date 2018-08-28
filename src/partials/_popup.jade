@@ -8,12 +8,12 @@
     .popup__text
       | Мы на связи 24 часа, без выходных и праздников. Готовы ответить на ваши вопросы, обеспечить консультацию и забронировать тур в ближайшее время.
 
-    form.popup__form(action="", method="POST", name="callback")
+    form.popup__form(action="https://formspree.io/info@vinvotravel.com", method="POST", name="callback")
       input.popup__form-input(type="text", placeholder="Как вас зовут?", name="name" minlength=3, required)
       input.popup__form-input(type="tel", name="phone" placeholder="Контактный телефон", required)
-      select.popup__form-select(placeholder="Удобное время звонка", name="call-time")
-        option(value=undefined)
-          | Удобное время звонка
+      select.popup__form-select(data-placeholder="Удобное время звонка", name="call-time")
+        //- option(value=undefined disabled)
+        //-   | Удобное время звонка
 
         option(value="1")
           | В ближайшее время

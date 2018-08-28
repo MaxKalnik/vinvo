@@ -80,6 +80,10 @@ $formWidth-small = 100%;
   color #19082B
   margin-bottom 16px
 
+  +respond-to($xsmall)
+    font-size 24px
+    line-height 32px
+
 .popup__text
   font-size 16px
   line-height 22px
@@ -282,11 +286,19 @@ $formWidth-small = 100%;
 
 .popup__form--undefined
   opacity 1
-  transition .35s ease-in
+  transition .35s
+
+  +respond-to($xsmall)
+    position static
+    transition none
 
 .popup__form--defined
   opacity 0
-  transition .35s ease-in
+  transition .35s
+
+  +respond-to($xsmall)
+    position absolute
+    transition none
 
   .popup__form-btn
     margin-top 32px
@@ -295,8 +307,14 @@ $formWidth-small = 100%;
   .popup__form--undefined
     opacity 0
 
+    +respond-to($xsmall)
+      position absolute
+
   .popup__form--defined
     opacity 1
+
+    +respond-to($xsmall)
+      position static
 
 .popup__form-switcher
   width 100%

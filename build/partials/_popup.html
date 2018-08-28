@@ -4,11 +4,10 @@
     <button type="button" tabindex="0" class="popup__close-btn"></button>
     <div class="popup__title">Обратный звонок</div>
     <div class="popup__text">Мы на связи 24 часа, без выходных и праздников. Готовы ответить на ваши вопросы, обеспечить консультацию и забронировать тур в ближайшее время.</div>
-    <form action="" method="POST" name="callback" class="popup__form">
+    <form action="https://formspree.io/info@vinvotravel.com" method="POST" name="callback" class="popup__form">
       <input type="text" placeholder="Как вас зовут?" name="name" minlength="3" required="required" class="popup__form-input"/>
       <input type="tel" name="phone" placeholder="Контактный телефон" required="required" class="popup__form-input"/>
-      <select placeholder="Удобное время звонка" name="call-time" class="popup__form-select">
-        <option>Удобное время звонка</option>
+      <select data-placeholder="Удобное время звонка" name="call-time" class="popup__form-select">
         <option value="1">В ближайшее время</option>
         <option value="2">с 10:00 до 14:00</option>
         <option value="3">с 14:00 до 19:00</option>

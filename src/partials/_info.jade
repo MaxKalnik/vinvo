@@ -11,7 +11,7 @@ include ./svg-mixins
         p.info__proposals-text
           | Мы раз в неделю будем оповещать вас о лучших предложениях на рынке. Покупайте дешевле!
 
-        form.info__proposals-form(action="", name="proposals" method="POST")
+        form.info__proposals-form(action="https://formspree.io/info@vinvotravel.com", name="proposals" method="POST")
           input.info__proposals-form-input(type="text", name="name" placeholder="Как вас зовут?", minlength=3, required)
           input.info__proposals-form-input(type="email", name="phone", placeholder="Ваш Email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
           button.info__proposals-form-btn(type="submit", data-sm="thank-you")
