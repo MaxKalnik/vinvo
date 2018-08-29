@@ -243,7 +243,7 @@ if($('.testimonials__slides-list').length) {
   $(window).resize(throttle(initVars, 500, {leading: false}))
 }
 
-$(".testimonials__slides-list-item").swipe( {
+$(".testimonials__slides-list-wrapper").swipe( {
   swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
     next();
   },

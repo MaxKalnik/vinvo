@@ -3911,7 +3911,6 @@ input[type="date"] {
   transition: 0.25s;
   border-bottom: 1px solid #c0c4d1;
   background: #fff;
-  color: #859db7;
 }
 @media only screen and (max-width: 767px) {
   .select-options .select-item {
