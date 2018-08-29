@@ -9,13 +9,13 @@ function initMap() {
   document.getElementById('map1'), {zoom: 16, center: place});
   var marker = new google.maps.Marker({position: place, map: map});
 
-  var place2 = {lat: 50.413143, lng: 30.664040};
+  var place2 = {lat: 50.455209, lng: 30.489283};
   var map2 = new google.maps.Map(
   document.getElementById('map2'), {zoom: 16, center: place2});
   var marker = new google.maps.Marker({position: place2, map: map2});
 }
 
-
+// dropdown
 function makeSelectCustom(element) {
   element.each(function(){
     var $this = $(this), numberOfOptions = $(this).children('option').length;
@@ -52,10 +52,10 @@ function makeSelectCustom(element) {
 
     var $listItems = $list.children('li');
 
-    if($selected) {
-      $styledSelect.text($selected.text());
-      $($listItems[$selectedInd]).hide();
-    }
+    // if($selected) {
+    //   $styledSelect.text($selected.text());
+    //   $($listItems[$selectedInd]).hide();
+    // }
 
     $styledSelect.attr('tabindex', 0);
     $styledSelect.click(function(e) {
@@ -107,7 +107,7 @@ function makeSelectCustom(element) {
     $($listItems).swipe({
       tap: function(event, target) {
         $listItems.show();
-        e.stopPropagation();
+        event.stopPropagation();
         $styledSelect.text($(this).text()).removeClass('active');
         $this.val($(this).attr('rel'));
         $(this).hide();
@@ -243,7 +243,7 @@ if($('.testimonials__slides-list').length) {
   $(window).resize(throttle(initVars, 500, {leading: false}))
 }
 
-$(".testimonials__slides-list-wrapper").swipe( {
+$(".testimonials__slides-list-item").swipe( {
   swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
     next();
   },
@@ -252,28 +252,8 @@ $(".testimonials__slides-list-wrapper").swipe( {
     prev();
   },
    allowPageScroll: "vertical",
-   threshold: 35
+   threshold: 25
 });
-
-var currentForm;
-
-function send(data, onSuccess, onError) {
-  var xhr = new XMLHttpRequest();
-  xhr.responseType = 'json';
-  currentForm = data;
-  xhr.addEventListener('load', function () {
-    if (xhr.status === 200) {
-      return;
-    } else {
-      console.log('Ошибка ' + xhr.status);
-    }
-  });
-
-  xhr.open('POST', URL.post);
-  xhr.send(data);
-}
-
-// make all popups by one class, maybe using coffeescript
 
 // popup
 function dialogCommonHandler($activateEl) {
@@ -286,12 +266,9 @@ function dialogCommonHandler($activateEl) {
 
   $($activateEl).swipe({
     tap: function(event, target) {
-      $('.popup').hide();
       $popup.show();
-      if($form.length > 0) {
-        send(new FormData($form));
-      }
-      if(currentForm && $form.find('input[type="tel"]').val()) {
+
+      if($form.find('input[type="tel"]').val()) {
         $popup.find('input[type="tel"]').val($form.find('input[type="tel"]').val());
       }
       if($(this).data('country')) {
@@ -300,7 +277,7 @@ function dialogCommonHandler($activateEl) {
       if($(this).data('type')) {
         var type = $(this).data('type');
         var $wrapper = $popup.find('.popup__wrapper');
-        type === "undefined-type"? $wrapper.removeClass('popup__wrapper--full') : $wrapper.addClass('popup__wrapper--full')
+        type === "undefined-type" ? $wrapper.removeClass('popup__wrapper--full') : $wrapper.addClass('popup__wrapper--full')
         $popup.find("#" + type).prop('checked', true);
       }
     }
@@ -308,12 +285,9 @@ function dialogCommonHandler($activateEl) {
 
   $($activateEl).keydown(function(e) {
     if(e.which === ENTER_KEYCODE) {
-      $('.popup').hide();
       $popup.show();
-      if($form.length > 0) {
-        send(new FormData($form));
-      }
-      if(currentForm && $form.find('input[type="tel"]').val()) {
+
+      if($form.find('input[type="tel"]').val()) {
         $popup.find('input[type="tel"]').val($form.find('input[type="tel"]').val());
       }
       if($(this).data('country')) {
@@ -322,7 +296,7 @@ function dialogCommonHandler($activateEl) {
       if($(this).data('type')) {
         var type = $(this).data('type');
         var $wrapper = $popup.find('.popup__wrapper');
-        type === "undefined-type"? $wrapper.removeClass('popup__wrapper--full') : $wrapper.addClass('popup__wrapper--full')
+        type === "undefined-type" ? $wrapper.removeClass('popup__wrapper--full') : $wrapper.addClass('popup__wrapper--full')
         $popup.find("#" + type).prop('checked', true);
       }
     }
@@ -344,7 +318,6 @@ function dialogCommonHandler($activateEl) {
 
   $($popupBtn).swipe({
     tap: function(event, target) {
-      event.preventDefault();
       $popup.hide();
       $popup.find('input[name="country"]').val(undefined);
     }
@@ -381,10 +354,12 @@ $('.header__tel-toggle').swipe({
 });
 
 $(document).mouseup(function(e) {
+  if($(document).width() > 768) {
     var container = $('.header__tel-numbers');
     if (!container.is(e.target) && container.has(e.target).length === 0) {
       container.removeClass('header__tel-numbers--active');
     }
+  }
 });
 $(document).mouseup(function(e) {
     var container = $('.footer__tel-numbers');
@@ -408,12 +383,15 @@ $('.popup__form-switcher-label--defined').swipe({
 $('.header__user-block-toggle').swipe({
   tap: function(event, target) {
     $(this).parents('.header__user-block-wrapper').addClass('header__user-block-wrapper--active');
+    $('.header__tel-numbers').addClass('header__tel-numbers--active');
   }
 });
 
 $('.header__user-block-close').swipe({
   tap: function(event, target) {
     $(this).parents('.header__user-block-wrapper').removeClass('header__user-block-wrapper--active');
+    $('.header__tel-numbers').removeClass('header__tel-numbers--active');
   }
 });
 
+$('input[type="tel"]').mask('+38(000)-000-00-00');

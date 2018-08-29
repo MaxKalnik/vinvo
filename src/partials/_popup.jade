@@ -12,9 +12,6 @@
       input.popup__form-input(type="text", placeholder="Как вас зовут?", name="name" minlength=3, required)
       input.popup__form-input(type="tel", name="phone" placeholder="Контактный телефон", required)
       select.popup__form-select(data-placeholder="Удобное время звонка", name="call-time")
-        //- option(value=undefined disabled)
-        //-   | Удобное время звонка
-
         option(value="1")
           | В ближайшее время
 
@@ -52,7 +49,7 @@
 
     .popup__form-slides
       .popup__form-slides-list
-        form.popup__form.popup__form--undefined(action="https://formspree.io/kalnikmaxim@gmail.com", method="POST", name
+        form.popup__form.popup__form--undefined(action="https://formspree.io/info@vinvotravel.com", method="POST", name
         ="booking-undefined")
           .popup__form-wrapper
             input.popup__form-input(type="text", placeholder="Как вас зовут?" minlength=3, name="name", required)
@@ -67,7 +64,7 @@
             span.popup__form-btn-lg
               |  на подбор тура
 
-        form.popup__form.popup__form--defined(action="https://formspree.io/kalnikmaxim@gmail.com", method="POST", name="booking-defined")
+        form.popup__form.popup__form--defined(action="https://formspree.io/info@vinvotravel.com", method="POST", name="booking-defined")
           .popup__form-wrapper.popup__form-wrapper--full
             input.popup__form-input.popup__form-input--half(type="text", name="name" placeholder="Как вас зовут?" minlength=3, required)
             input.popup__form-input.popup__form-input--half(type="email", name="e-mail" placeholder="Ваш Email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)

@@ -267,15 +267,17 @@
   .header__tel-other
     display block
     opacity 1
-    top 56px
+    top 55px
     max-height 999px
     background #fff
     border-radius 0 0 6px 6px
+    border-top 1px solid #c0c4d1
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1)
 
     +respond-to($xsmall)
       max-height 999px
       background transparent
+      border-top none
       border-radius 0 0 6px 6px
 
   .header__tel-toggle
@@ -310,7 +312,7 @@
       bottom -1px
       left 0
       position absolute
-      width 100%
+      width calc(100% + 1px)
       height 1px
       background #C0C4D1
 
@@ -325,7 +327,7 @@
     padding-bottom 16px
     white-space nowrap
     &:after
-      widht calc(100% - 1px)
+      display none
 
     +respond-to($xsmall)
       padding-top 0
@@ -376,16 +378,18 @@
     .header__tel-other
       display block
       opacity 1
-      top 56px
+      top 55px
       max-height 999px
       background #fff
       border-radius 0 0 6px 6px
+      border-top 1px solid #c0c4d1
       box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1)
 
       +respond-to($xsmall)
         max-height 999px
         background transparent
         border-radius 0 0 6px 6px
+        border-top none
 
     .header__tel-toggle
       transform rotateX(180deg)
@@ -419,7 +423,7 @@
         bottom -1px
         left 0
         position absolute
-        width 100%
+        width calc(100% + 1px)
         height 1px
         background #C0C4D1
 
@@ -434,7 +438,7 @@
       padding-bottom 16px
       white-space nowrap
       &:after
-        widht calc(100% - 1px)
+        display none
 
       +respond-to($xsmall)
         padding-top 0
@@ -444,9 +448,6 @@
       &:before
         background url(images/icons/whatsapp_color_logo.svg) center no-repeat
         background-size cover
-
-      &:after
-        width calc(100% + 36px)
 
     .header__tel-btn--lc
       padding-top 16px
@@ -579,10 +580,11 @@
   &:hover
     background: linear-gradient(23.59deg, #632774 7.28%, #CB4272 92.72%, #CB4272 92.72%)
 
-
   +respond-to($xsmall)
     border-radius: 0 0 6px 6px
     padding 14px 16px
+    &:after
+      padding 14px 16px
 
 .header__partners
   display flex

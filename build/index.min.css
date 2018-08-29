@@ -778,16 +778,18 @@ textarea {
 .header__tel-numbers--active .header__tel-other {
   display: block;
   opacity: 1;
-  top: 56px;
+  top: 55px;
   max-height: 999px;
   background: #fff;
   border-radius: 0 0 6px 6px;
+  border-top: 1px solid #c0c4d1;
   box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
 }
 @media only screen and (max-width: 767px) {
   .header__tel-numbers--active .header__tel-other {
     max-height: 999px;
     background: transparent;
+    border-top: none;
     border-radius: 0 0 6px 6px;
   }
 }
@@ -828,7 +830,7 @@ textarea {
   bottom: -1px;
   left: 0;
   position: absolute;
-  width: 100%;
+  width: calc(100% + 1px);
   height: 1px;
   background: #c0c4d1;
 }
@@ -847,7 +849,7 @@ textarea {
   white-space: nowrap;
 }
 .header__tel-numbers--active .header__tel-btn--main:after {
-  widht: calc(100% - 1px);
+  display: none;
 }
 @media only screen and (max-width: 767px) {
   .header__tel-numbers--active .header__tel-btn--main {
@@ -897,10 +899,11 @@ textarea {
   .header__tel-numbers:hover .header__tel-other {
     display: block;
     opacity: 1;
-    top: 56px;
+    top: 55px;
     max-height: 999px;
     background: #fff;
     border-radius: 0 0 6px 6px;
+    border-top: 1px solid #c0c4d1;
     box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
   }
   .header__tel-numbers:hover .header__tel-toggle {
@@ -927,7 +930,7 @@ textarea {
     bottom: -1px;
     left: 0;
     position: absolute;
-    width: 100%;
+    width: calc(100% + 1px);
     height: 1px;
     background: #c0c4d1;
   }
@@ -937,14 +940,11 @@ textarea {
     white-space: nowrap;
   }
   .header__tel-numbers:hover .header__tel-btn--main:after {
-    widht: calc(100% - 1px);
+    display: none;
   }
   .header__tel-numbers:hover .header__tel-btn--main:before {
     background: url("images/icons/whatsapp_color_logo.svg") center no-repeat;
     background-size: cover;
-  }
-  .header__tel-numbers:hover .header__tel-btn--main:after {
-    width: calc(100% + 36px);
   }
   .header__tel-numbers:hover .header__tel-btn--lc {
     padding-top: 16px;
@@ -971,6 +971,7 @@ textarea {
     max-height: 999px;
     background: transparent;
     border-radius: 0 0 6px 6px;
+    border-top: none;
   }
 }
 @media only screen and (min-width: 1024px) and (max-width: 767px) {
@@ -1154,6 +1155,9 @@ textarea {
 @media only screen and (max-width: 767px) {
   .header__callback-form-btn {
     border-radius: 0 0 6px 6px;
+    padding: 14px 16px;
+  }
+  .header__callback-form-btn:after {
     padding: 14px 16px;
   }
 }
@@ -2958,7 +2962,7 @@ textarea {
 }
 @media only screen and (max-width: 1023px) {
   .contacts__manager {
-    margin-right: 63px;
+    margin-right: 60px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -3422,6 +3426,12 @@ svg {
   width: 100%;
   box-sizing: border-box;
 }
+.popup__form-input:-ms-input-placeholder {
+  color: #859db7;
+}
+.popup__form-input::placeholder {
+  color: #859db7;
+}
 .popup__form-btn {
   margin-top: 24px;
 }
@@ -3476,6 +3486,14 @@ svg {
 .popup__form-input--textarea {
   height: 84px;
   margin-bottom: 0;
+}
+.popup__form-input--textarea:-ms-input-placeholder {
+  color: #859db7;
+  font-weight: 400;
+}
+.popup__form-input--textarea::placeholder {
+  color: #859db7;
+  font-weight: 400;
 }
 .popup--order-prime .popup__wrapper {
   height: 696px;
@@ -3811,6 +3829,8 @@ input[type="date"] {
   border: 1px solid #c0c4d1;
   background: #fdfdfe;
   font-size: 16px;
+  color: #859db7;
+  font-weight: 400;
 }
 @include transition(all 0.25s);
 @media only screen and (max-width: 767px) {
@@ -3891,6 +3911,7 @@ input[type="date"] {
   transition: 0.25s;
   border-bottom: 1px solid #c0c4d1;
   background: #fff;
+  color: #859db7;
 }
 @media only screen and (max-width: 767px) {
   .select-options .select-item {
