@@ -11,10 +11,10 @@ include ./svg-mixins
         p.info__proposals-text
           | Мы раз в неделю будем оповещать вас о лучших предложениях на рынке. Покупайте дешевле!
 
-        form.info__proposals-form(action="https://formspree.io/info@vinvotravel.com", name="proposals" method="POST")
-          input.info__proposals-form-input(type="text", name="name" placeholder="Как вас зовут?", minlength=3, required)
-          input.info__proposals-form-input(type="email", name="phone", placeholder="Ваш Email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
-          button.info__proposals-form-btn(type="submit", data-sm="thank-you")
+        form.info__proposals-form(action="https://vinvotravel.us12.list-manage.com/subscribe/post?u=4cf97530d2a247bb6d52031b0&amp;id=bb5f9b21f3", name="mc-embedded-subscribe-form", id="mc-embedded-subscribe-form", method="POST", class="validate", target="_blank", novalidate)
+          input.info__proposals-form-input(type="text", id="mce-FNAME", name="FNAME", placeholder="Как вас зовут?", minlength=3, required)
+          input.info__proposals-form-input(type="email", id="mce-EMAIL", name="EMAIL", placeholder="Ваш Email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", required)
+          button.info__proposals-form-btn(type="submit", name="subscribe", id="mc-embedded-subscribe", data-sm="thank-you")
             | Сообщайте мне о скидках
 
         p.info__proposals-under-text
@@ -28,7 +28,7 @@ include ./svg-mixins
         .info__numbers-item
           +tour_base
           p.info__numbers-number
-            | 550 000 00
+            | 55 000 000
 
           p.info__numbers-text
             | туров в базе
@@ -36,7 +36,7 @@ include ./svg-mixins
         .info__numbers-item
           +sat_clients
           p.info__numbers-number
-            | 11 000
+            | 11 239
 
           p.info__numbers-text
             | довольных клиентов
