@@ -97,7 +97,7 @@ a{text-decoration: none}
   box-sizing: border-box;
   background-color: transparent;
   background: linear-gradient(73.59deg, #632774 7.28%, #cb4272 92.72%, #cb4272 92.72%);
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .button:after,
 .header__callback-form-btn:after,
@@ -119,7 +119,7 @@ a{text-decoration: none}
   height: 100%;
   opacity: 0;
   transition: 0.25s;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .button:hover,
 .header__callback-form-btn:hover,
@@ -189,7 +189,6 @@ a{text-decoration: none}
   font-weight: 700;
   line-height: normal;
   color: #198cff;
-  text-shadow: 1px 1px 10px rgba(0,0,0,0.1);
   border-radius: 4px;
 }
 .button-blue:hover,
@@ -712,7 +711,7 @@ textarea {
 }
 .header__tel-toggle {
   position: relative;
-  width: 36px;
+  width: 38px;
   height: 32px;
   transition: 0.15s;
 }
@@ -2379,7 +2378,7 @@ textarea {
   line-height: 30px;
   font-weight: 500;
   background: linear-gradient(259.84deg, #198cff -9.85%, #68b3ff 48.37%);
-  border-radius: 6px;
+  border-radius: 4px;
   margin-bottom: 18px;
 }
 @media only screen and (max-width: 767px) {
@@ -2443,7 +2442,7 @@ textarea {
   width: 300px;
 }
 .main-steps__button--undefined:after {
-  content: 'Предложите нам варианты';
+  content: 'Предложите мне варианты';
   padding: 23px;
 }
 .main-steps__button--undefined:hover {
