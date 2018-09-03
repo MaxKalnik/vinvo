@@ -2602,7 +2602,7 @@ textarea {
   }
 }
 .testimonials__slides-list {
-  width: 2940px;
+  width: 7840px;
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -2615,24 +2615,24 @@ textarea {
 }
 @media only screen and (max-width: 1439px) {
   .testimonials__slides-list {
-    width: 2352px;
+    width: 6272px;
   }
 }
 @media only screen and (max-width: 1023px) {
   .testimonials__slides-list {
-    width: 1704px;
+    width: 4544px;
   }
 }
 @media only screen and (max-width: 767px) {
   .testimonials__slides-list {
-    width: 1200px;
+    width: 3200px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 @media only screen and (max-width: 567px) {
   .testimonials__slides-list {
-    width: 864px;
+    width: 2304px;
   }
 }
 .testimonials__list-item {
@@ -2778,7 +2778,7 @@ textarea {
 }
 .testimonials__pointers {
   display: none;
-  width: 50px;
+  width: 150px;
   box-sizing: border-box;
   margin: 0 auto;
 }

@@ -55,7 +55,7 @@ $sliderViewportXXsmall = 288px
     width: $sliderViewportXXsmall
 
 .testimonials__slides-list
-  width: $sliderViewport * 3
+  width: $sliderViewport * 8
   position: relative
   display: flex
   flex-direction: row
@@ -63,18 +63,18 @@ $sliderViewportXXsmall = 288px
   transition: .25s
   overflow: hidden
   +respond-to($medium)
-    width: $sliderViewportMedium * 3
+    width: $sliderViewportMedium * 8
 
   +respond-to($small)
-    width: $sliderViewportSmall * 3
+    width: $sliderViewportSmall * 8
 
   +respond-to($xsmall)
-    width: $sliderViewportXsmall * 3
+    width: $sliderViewportXsmall * 8
     margin-left: auto
     margin-right: auto
 
   +respond-to($xsmall-iphone)
-    width: $sliderViewportXXsmall * 3
+    width: $sliderViewportXXsmall * 8
 
 .testimonials__list-item
   width: $sliderViewport
@@ -200,7 +200,7 @@ $sliderViewportXXsmall = 288px
 
 .testimonials__pointers
   display none
-  width: 50px
+  width: 150px
   box-sizing: border-box
   margin: 0 auto
 
